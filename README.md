@@ -10,6 +10,7 @@ To (re)generate the SDK, run `./bin/generateSDK.sh`.
 Note that this already imposes some requirements, e.g. bash, swagger-codegen, npx.
 
 To use the SDK, well, I do not know yet. It appears the generator is not smart enough to be actually usable yet.
+The reason is that the apiary docs by Pipefy are not as detailed as their website. So, first, another generator generating swagger from their website would have to be written.
 
 ## Contributing
 
