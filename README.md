@@ -4,6 +4,13 @@
 The code for the generation can be found in `./bin/generateSDK.sh`.
 It is run periodically by a GitHub Action to update the SDK in case the specification changed.
 
+## Usage
+
+To (re)generate the SDK, run `./bin/generateSDK.sh`.
+Note that this already imposes some requirements, e.g. bash, swagger-codegen, npx.
+
+To use the SDK, well, I do not know yet. It appears the generator is not smart enough to be actually usable yet.
+
 ## Contributing
 
 Contributions are highly welcome.
