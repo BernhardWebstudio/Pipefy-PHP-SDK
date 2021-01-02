@@ -3,7 +3,7 @@ name: Generate SDK
 on:
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron: "0 2 3 * *"
 
