@@ -16,7 +16,7 @@ jobs:
         run: "brew install swagger-codegen"
 
       - name: Install npx
-        run: "npm i -g npx"
+        run: "npm i -g npx || echo 'Already installed'"
       
       - name: "Run Generation"
         run: "./bin/generateSDK.sh"
