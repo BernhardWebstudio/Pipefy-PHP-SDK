@@ -15,6 +15,16 @@ $typeTranslator = [
   "SCALAR" => "custom-scalar"
 ];
 
+function translatePipefyType($type)
+{
+  global $typeTranslator;
+  // if ($type["kind"] == "SCALAR") {
+  //   return $type["name"];
+  // } else {
+    return $typeTranslator[$type["kind"]];
+  // }
+}
+
 function translateTypeToKind($type)
 {
   if ($type['name'] != null) {
@@ -52,7 +62,7 @@ foreach ($schema["types"] as $type) {
     }
   }
   $obj = [
-    'type' => $typeTranslator[$type["kind"]],
+    'type' => translatePipefyType($type),
     'config' => $objConfig,
     'name' => $type["name"]
   ];
@@ -66,4 +76,4 @@ $classesMap = $typeGenerator->generateClasses($config, __DIR__ . '/../src/Types'
 
 $loader->addClassMap($classesMap);
 
-$schema = new Schema(\BernhardWebstudio\PipefySDK\PHP\Types\QueryType::getInstance());
+// $schema = new Schema(\BernhardWebstudio\PipefySDK\PHP\Types\QueryType::getInstance());

@@ -23,6 +23,9 @@ jobs:
       - name: Install yarn dependencies
         run: "yarn install"
       
+      - name: Install composer dependencies
+        run: "composer install"
+      
       - name: Fetch API specs
         run: "yarn graphdoc -e https://api.pipefy.com/graphql -x \"Authorization: Bearer ${{ secrets.GRAPHQL_TOKEN }}\" -p graphdoc-schema-json-plugin -o ./doc/schema"
         # run: "bash ./bin/generateSDK.sh"
