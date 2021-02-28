@@ -1,0 +1,12 @@
+{
+  "name": "Pipefy-PHP-SDK",
+  "version": "1.0.0",
+  "main": "bin/index.js",
+  "repository": "git@github.com:BernhardWebstudio/Pipefy-PHP-SDK.git",
+  "author": "Tim Bernhard <tim@bernhard-webstudio.ch>",
+  "license": "GPL-3.0-or-later",
+  "private": false,
+  "devDependencies": {
+    "@2fd/graphdoc": "^2.4.0"
+  }
+}

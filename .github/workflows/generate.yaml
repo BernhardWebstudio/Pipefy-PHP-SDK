@@ -20,8 +20,15 @@ jobs:
       - name: Install npx
         run: "npm i -g npx || echo 'Already installed'"
       
-      - name: "Run Generation"
-        run: "bash ./bin/generateSDK.sh"
+      - name: Install yarn dependencies
+        run: "yarn install"
+      
+      - name: Fetch API specs
+        run: "yarn graphdoc -e https://api.pipefy.com/graphql -x \"Authorization: Bearer ${{ secrets.GRAPHQL_TOKEN }}\" -p graphdoc-schema-json-plugin -o ./doc/schema"
+        # run: "bash ./bin/generateSDK.sh"
+
+      - name: Generate API
+        run: "php bin/generatePhpApi.php"
 
       - name: "Commit Changes"
         uses: EndBug/add-and-commit@v6 # You can change this to use a specific version
