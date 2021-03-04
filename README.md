@@ -6,16 +6,15 @@ It is run periodically by a GitHub Action to update the SDK in case the specific
 
 ## Usage
 
-To (re)generate the SDK, run `./bin/generateSDK.sh`.
-Note that this already imposes some requirements, e.g. bash, swagger-codegen, npx.
+This code was intially generated using [`mghoneimy/php-graphql-oqm`](https://github.com/mghoneimy/php-graphql-oqm) and then adjusted to actually be usable (removal of duplicate and deprecated fields, rename of a few methods). 
 
-To use the SDK, well, I do not know yet. It appears the generator is not smart enough to be actually usable yet.
-The reason is that the apiary docs by Pipefy are not as detailed as their website. So, first, another generator generating swagger from their website would have to be written.
+Note that currently, only queries are supported. Refer to their issue [#16](https://github.com/mghoneimy/php-graphql-oqm/issues/16) to subscribe for updates on when mutations will be implemented.
+
+It can be used together with [`mghoneimy/php-graphql-client`](https://github.com/mghoneimy/php-graphql-client) and can be used as described in the corresponding documentations.
+
 
 ## Contributing
 
 Contributions are highly welcome.
-Make sure to keep your contribution general enough that it does not get overridden when running the generator again.
-In other words, at the current point in time, *DO NOT MODIFY CODE IN `src`*.
 
 
