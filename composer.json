@@ -1,12 +1,15 @@
 {
     "name": "bernhardwebstudio/pipefy-php-sdk",
+    "extra": [],
     "description": "An SDK for the PHP GraphQL API",
     "require-dev": {
         "overblog/graphql-php-generator": "^0.12.6",
-        "symfony/expression-language": "^5.2"
+        "symfony/expression-language": "^5.2",
+        "rector/rector": "^0.9.31",
+        "gmostafa/php-graphql-oqm": "^1.3"
     },
     "require": {
-
+        "gmostafa/php-graphql-client": "^1.9"
     },
     "license": "GPL-3.0-or-later",
     "authors": [
@@ -15,10 +18,10 @@
             "email": "tim@bernhard-webstudio.ch"
         }
     ],
-    "minimum-stability": "stable",
     "autoload": {
-        "psr-0": {
-            "BernhardWebstudio/PipefySDK/PHP": "src/"
+        "psr-4": {
+            "GraphQL\\SchemaObject\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "stable"
 }
