@@ -5,6 +5,7 @@ namespace GraphQL\SchemaObject;
 class RootCardsImportationsArgumentsObject extends ArgumentsObject
 {
     protected $pipeId;
+
     protected $status;
 
     public function setPipeId($pipeId)

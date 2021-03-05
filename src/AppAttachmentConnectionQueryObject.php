@@ -4,11 +4,11 @@ namespace GraphQL\SchemaObject;
 
 class AppAttachmentConnectionQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "AppAttachmentConnection";
+    public const OBJECT_NAME = 'AppAttachmentConnection';
 
     public function selectEdges(AppAttachmentConnectionEdgesArgumentsObject $argsObject = null)
     {
-        $object = new AppAttachmentEdgeQueryObject("edges");
+        $object = new AppAttachmentEdgeQueryObject('edges');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -19,7 +19,7 @@ class AppAttachmentConnectionQueryObject extends QueryObject
 
     public function selectPageInfo(AppAttachmentConnectionPageInfoArgumentsObject $argsObject = null)
     {
-        $object = new PageInfoQueryObject("pageInfo");
+        $object = new PageInfoQueryObject('pageInfo');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }

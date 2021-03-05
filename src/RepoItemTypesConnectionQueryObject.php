@@ -4,11 +4,11 @@ namespace GraphQL\SchemaObject;
 
 class RepoItemTypesConnectionQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "RepoItemTypesConnection";
+    public const OBJECT_NAME = 'RepoItemTypesConnection';
 
     public function selectEdges(RepoItemTypesConnectionEdgesArgumentsObject $argsObject = null)
     {
-        $object = new RepoItemTypesEdgeQueryObject("edges");
+        $object = new RepoItemTypesEdgeQueryObject('edges');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -19,7 +19,7 @@ class RepoItemTypesConnectionQueryObject extends QueryObject
 
     public function selectPageInfo(RepoItemTypesConnectionPageInfoArgumentsObject $argsObject = null)
     {
-        $object = new PageInfoQueryObject("pageInfo");
+        $object = new PageInfoQueryObject('pageInfo');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }

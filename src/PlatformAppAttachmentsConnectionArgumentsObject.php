@@ -5,9 +5,13 @@ namespace GraphQL\SchemaObject;
 class PlatformAppAttachmentsConnectionArgumentsObject extends ArgumentsObject
 {
     protected $first;
+
     protected $after;
+
     protected $last;
+
     protected $before;
+
     protected $cardId;
 
     public function setFirst($first)

@@ -4,11 +4,11 @@ namespace GraphQL\SchemaObject;
 
 class TableRecordConnectionQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "TableRecordConnection";
+    public const OBJECT_NAME = 'TableRecordConnection';
 
     public function selectEdges(TableRecordConnectionEdgesArgumentsObject $argsObject = null)
     {
-        $object = new TableRecordEdgeQueryObject("edges");
+        $object = new TableRecordEdgeQueryObject('edges');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -19,7 +19,7 @@ class TableRecordConnectionQueryObject extends QueryObject
 
     public function selectPageInfo(TableRecordConnectionPageInfoArgumentsObject $argsObject = null)
     {
-        $object = new PageInfoQueryObject("pageInfo");
+        $object = new PageInfoQueryObject('pageInfo');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }

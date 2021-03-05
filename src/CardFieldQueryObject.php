@@ -4,18 +4,18 @@ namespace GraphQL\SchemaObject;
 
 class CardFieldQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "CardField";
+    public const OBJECT_NAME = 'CardField';
 
     public function selectArrayValue()
     {
-        $this->selectField("array_value");
+        $this->selectField('array_value');
 
         return $this;
     }
 
     public function selectAssigneeValues(CardFieldAssigneeValuesArgumentsObject $argsObject = null)
     {
-        $object = new UserQueryObject("assignee_values");
+        $object = new UserQueryObject('assignee_values');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -26,21 +26,21 @@ class CardFieldQueryObject extends QueryObject
 
     public function selectDateValue()
     {
-        $this->selectField("date_value");
+        $this->selectField('date_value');
 
         return $this;
     }
 
     public function selectDatetimeValue()
     {
-        $this->selectField("datetime_value");
+        $this->selectField('datetime_value');
 
         return $this;
     }
 
     public function selectMinimalField(CardFieldFieldArgumentsObject $argsObject = null)
     {
-        $object = new MinimalFieldQueryObject("field");
+        $object = new MinimalFieldQueryObject('field');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -51,28 +51,28 @@ class CardFieldQueryObject extends QueryObject
 
     public function selectFilledAt()
     {
-        $this->selectField("filled_at");
+        $this->selectField('filled_at');
 
         return $this;
     }
 
     public function selectFloatValue()
     {
-        $this->selectField("float_value");
+        $this->selectField('float_value');
 
         return $this;
     }
 
     public function selectIndexName()
     {
-        $this->selectField("indexName");
+        $this->selectField('indexName');
 
         return $this;
     }
 
     public function selectLabelValues(CardFieldLabelValuesArgumentsObject $argsObject = null)
     {
-        $object = new FieldLabelQueryObject("label_values");
+        $object = new FieldLabelQueryObject('label_values');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -83,14 +83,14 @@ class CardFieldQueryObject extends QueryObject
 
     public function selectName()
     {
-        $this->selectField("name");
+        $this->selectField('name');
 
         return $this;
     }
 
     public function selectPhaseField(CardFieldPhaseFieldArgumentsObject $argsObject = null)
     {
-        $object = new PhaseFieldQueryObject("phase_field");
+        $object = new PhaseFieldQueryObject('phase_field');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -101,21 +101,21 @@ class CardFieldQueryObject extends QueryObject
 
     public function selectReportValue()
     {
-        $this->selectField("report_value");
+        $this->selectField('report_value');
 
         return $this;
     }
 
     public function selectUpdatedAt()
     {
-        $this->selectField("updated_at");
+        $this->selectField('updated_at');
 
         return $this;
     }
 
     public function selectValue()
     {
-        $this->selectField("value");
+        $this->selectField('value');
 
         return $this;
     }

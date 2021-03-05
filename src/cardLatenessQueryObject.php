@@ -4,32 +4,32 @@ namespace GraphQL\SchemaObject;
 
 class cardLatenessQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "cardLateness";
+    public const OBJECT_NAME = 'cardLateness';
 
     public function selectBecameLateAt()
     {
-        $this->selectField("becameLateAt");
+        $this->selectField('becameLateAt');
 
         return $this;
     }
 
     public function selectId()
     {
-        $this->selectField("id");
+        $this->selectField('id');
 
         return $this;
     }
 
     public function selectShouldBecomeLateAt()
     {
-        $this->selectField("shouldBecomeLateAt");
+        $this->selectField('shouldBecomeLateAt');
 
         return $this;
     }
 
     public function selectSla()
     {
-        $this->selectField("sla");
+        $this->selectField('sla');
 
         return $this;
     }

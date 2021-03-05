@@ -5,10 +5,15 @@ namespace GraphQL\SchemaObject;
 class RootCardsArgumentsObject extends ArgumentsObject
 {
     protected $first;
+
     protected $after;
+
     protected $last;
+
     protected $before;
+
     protected $pipe_id;
+
     protected $search;
 
     public function setFirst($first)

@@ -4,18 +4,18 @@ namespace GraphQL\SchemaObject;
 
 class AttachmentQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "Attachment";
+    public const OBJECT_NAME = 'Attachment';
 
     public function selectCreatedAt()
     {
-        $this->selectField("createdAt");
+        $this->selectField('createdAt');
 
         return $this;
     }
 
     public function selectCreatedBy(AttachmentCreatedByArgumentsObject $argsObject = null)
     {
-        $object = new UserQueryObject("createdBy");
+        $object = new UserQueryObject('createdBy');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -26,7 +26,7 @@ class AttachmentQueryObject extends QueryObject
 
     public function selectMinimalField(AttachmentFieldArgumentsObject $argsObject = null)
     {
-        $object = new MinimalFieldQueryObject("field");
+        $object = new MinimalFieldQueryObject('field');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -37,14 +37,14 @@ class AttachmentQueryObject extends QueryObject
 
     public function selectPath()
     {
-        $this->selectField("path");
+        $this->selectField('path');
 
         return $this;
     }
 
     public function selectPhase(AttachmentPhaseArgumentsObject $argsObject = null)
     {
-        $object = new PhaseQueryObject("phase");
+        $object = new PhaseQueryObject('phase');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -55,7 +55,7 @@ class AttachmentQueryObject extends QueryObject
 
     public function selectUrl()
     {
-        $this->selectField("url");
+        $this->selectField('url');
 
         return $this;
     }

@@ -4,32 +4,32 @@ namespace GraphQL\SchemaObject;
 
 class OrganizationQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "Organization";
+    public const OBJECT_NAME = 'Organization';
 
     public function selectCreatedAt()
     {
-        $this->selectField("created_at");
+        $this->selectField('created_at');
 
         return $this;
     }
 
     public function selectCustomLogoUrl()
     {
-        $this->selectField("custom_logo_url");
+        $this->selectField('custom_logo_url');
 
         return $this;
     }
 
     public function selectId()
     {
-        $this->selectField("id");
+        $this->selectField('id');
 
         return $this;
     }
 
     public function selectMembers(OrganizationMembersArgumentsObject $argsObject = null)
     {
-        $object = new MemberQueryObject("members");
+        $object = new MemberQueryObject('members');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -40,28 +40,28 @@ class OrganizationQueryObject extends QueryObject
 
     public function selectName()
     {
-        $this->selectField("name");
+        $this->selectField('name');
 
         return $this;
     }
 
     public function selectOnlyAdminCanCreatePipes()
     {
-        $this->selectField("only_admin_can_create_pipes");
+        $this->selectField('only_admin_can_create_pipes');
 
         return $this;
     }
 
     public function selectOnlyAdminCanInviteUsers()
     {
-        $this->selectField("only_admin_can_invite_users");
+        $this->selectField('only_admin_can_invite_users');
 
         return $this;
     }
 
     public function selectPipes(OrganizationPipesArgumentsObject $argsObject = null)
     {
-        $object = new PipeQueryObject("pipes");
+        $object = new PipeQueryObject('pipes');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -72,14 +72,14 @@ class OrganizationQueryObject extends QueryObject
 
     public function selectRole()
     {
-        $this->selectField("role");
+        $this->selectField('role');
 
         return $this;
     }
 
     public function selectTables(OrganizationTablesArgumentsObject $argsObject = null)
     {
-        $object = new TableConnectionQueryObject("tables");
+        $object = new TableConnectionQueryObject('tables');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -90,7 +90,7 @@ class OrganizationQueryObject extends QueryObject
 
     public function selectUsers(OrganizationUsersArgumentsObject $argsObject = null)
     {
-        $object = new UserQueryObject("users");
+        $object = new UserQueryObject('users');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -101,7 +101,7 @@ class OrganizationQueryObject extends QueryObject
 
     public function selectUsersCount()
     {
-        $this->selectField("users_count");
+        $this->selectField('users_count');
 
         return $this;
     }

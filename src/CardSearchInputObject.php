@@ -5,9 +5,13 @@ namespace GraphQL\SchemaObject;
 class CardSearchInputObject extends InputObject
 {
     protected $assignee_ids;
+
     protected $ignore_ids;
+
     protected $label_ids;
+
     protected $title;
+
     protected $include_done;
 
     public function setAssigneeIds(array $assigneeIds)

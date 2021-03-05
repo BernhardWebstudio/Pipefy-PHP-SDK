@@ -4,32 +4,32 @@ namespace GraphQL\SchemaObject;
 
 class EmailAttachmentQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "EmailAttachment";
+    public const OBJECT_NAME = 'EmailAttachment';
 
     public function selectFileUrl()
     {
-        $this->selectField("fileUrl");
+        $this->selectField('fileUrl');
 
         return $this;
     }
 
     public function selectFilename()
     {
-        $this->selectField("filename");
+        $this->selectField('filename');
 
         return $this;
     }
 
     public function selectId()
     {
-        $this->selectField("id");
+        $this->selectField('id');
 
         return $this;
     }
 
     public function selectPublicUrl()
     {
-        $this->selectField("public_url");
+        $this->selectField('public_url');
 
         return $this;
     }

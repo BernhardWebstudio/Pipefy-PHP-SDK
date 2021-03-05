@@ -4,11 +4,11 @@ namespace GraphQL\SchemaObject;
 
 class CardConnectionQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "CardConnection";
+    public const OBJECT_NAME = 'CardConnection';
 
     public function selectEdges(CardConnectionEdgesArgumentsObject $argsObject = null)
     {
-        $object = new CardEdgeQueryObject("edges");
+        $object = new CardEdgeQueryObject('edges');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -19,7 +19,7 @@ class CardConnectionQueryObject extends QueryObject
 
     public function selectPageInfo(CardConnectionPageInfoArgumentsObject $argsObject = null)
     {
-        $object = new PageInfoQueryObject("pageInfo");
+        $object = new PageInfoQueryObject('pageInfo');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }

@@ -4,25 +4,25 @@ namespace GraphQL\SchemaObject;
 
 class LabelQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "Label";
+    public const OBJECT_NAME = 'Label';
 
     public function selectColor()
     {
-        $this->selectField("color");
+        $this->selectField('color');
 
         return $this;
     }
 
     public function selectId()
     {
-        $this->selectField("id");
+        $this->selectField('id');
 
         return $this;
     }
 
     public function selectName()
     {
-        $this->selectField("name");
+        $this->selectField('name');
 
         return $this;
     }

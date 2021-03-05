@@ -4,11 +4,11 @@ namespace GraphQL\SchemaObject;
 
 class PhaseQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "Phase";
+    public const OBJECT_NAME = 'Phase';
 
     public function selectCards(PhaseCardsArgumentsObject $argsObject = null)
     {
-        $object = new CardConnectionQueryObject("cards");
+        $object = new CardConnectionQueryObject('cards');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -19,7 +19,7 @@ class PhaseQueryObject extends QueryObject
 
     public function selectCardsCanBeMovedToPhases(PhaseCardsCanBeMovedToPhasesArgumentsObject $argsObject = null)
     {
-        $object = new PhaseQueryObject("cards_can_be_moved_to_phases");
+        $object = new self('cards_can_be_moved_to_phases');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -30,49 +30,49 @@ class PhaseQueryObject extends QueryObject
 
     public function selectCardsCount()
     {
-        $this->selectField("cards_count");
+        $this->selectField('cards_count');
 
         return $this;
     }
 
     public function selectColor()
     {
-        $this->selectField("color");
+        $this->selectField('color');
 
         return $this;
     }
 
     public function selectCreatedAt()
     {
-        $this->selectField("created_at");
+        $this->selectField('created_at');
 
         return $this;
     }
 
     public function selectDescription()
     {
-        $this->selectField("description");
+        $this->selectField('description');
 
         return $this;
     }
 
     public function selectDone()
     {
-        $this->selectField("done");
+        $this->selectField('done');
 
         return $this;
     }
 
     public function selectExpiredCardsCount()
     {
-        $this->selectField("expiredCardsCount");
+        $this->selectField('expiredCardsCount');
 
         return $this;
     }
 
     public function selectFieldConditions(PhaseFieldConditionsArgumentsObject $argsObject = null)
     {
-        $object = new FieldConditionQueryObject("fieldConditions");
+        $object = new FieldConditionQueryObject('fieldConditions');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -83,7 +83,7 @@ class PhaseQueryObject extends QueryObject
 
     public function selectFields(PhaseFieldsArgumentsObject $argsObject = null)
     {
-        $object = new PhaseFieldQueryObject("fields");
+        $object = new PhaseFieldQueryObject('fields');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -94,28 +94,28 @@ class PhaseQueryObject extends QueryObject
 
     public function selectId()
     {
-        $this->selectField("id");
+        $this->selectField('id');
 
         return $this;
     }
 
     public function selectLateCardsCount()
     {
-        $this->selectField("lateCardsCount");
+        $this->selectField('lateCardsCount');
 
         return $this;
     }
 
     public function selectName()
     {
-        $this->selectField("name");
+        $this->selectField('name');
 
         return $this;
     }
 
     public function selectSequentialId()
     {
-        $this->selectField("sequentialId");
+        $this->selectField('sequentialId');
 
         return $this;
     }

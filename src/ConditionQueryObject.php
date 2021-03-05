@@ -4,11 +4,11 @@ namespace GraphQL\SchemaObject;
 
 class ConditionQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "Condition";
+    public const OBJECT_NAME = 'Condition';
 
     public function selectExpressions(ConditionExpressionsArgumentsObject $argsObject = null)
     {
-        $object = new ConditionExpressionQueryObject("expressions");
+        $object = new ConditionExpressionQueryObject('expressions');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -19,21 +19,21 @@ class ConditionQueryObject extends QueryObject
 
     public function selectExpressionsStructure()
     {
-        $this->selectField("expressions_structure");
+        $this->selectField('expressions_structure');
 
         return $this;
     }
 
     public function selectId()
     {
-        $this->selectField("id");
+        $this->selectField('id');
 
         return $this;
     }
 
     public function selectRelatedCards(ConditionRelatedCardsArgumentsObject $argsObject = null)
     {
-        $object = new CardQueryObject("related_cards");
+        $object = new CardQueryObject('related_cards');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }

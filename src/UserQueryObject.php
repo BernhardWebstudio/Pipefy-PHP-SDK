@@ -4,74 +4,74 @@ namespace GraphQL\SchemaObject;
 
 class UserQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "User";
+    public const OBJECT_NAME = 'User';
 
     public function selectAvatarUrl()
     {
-        $this->selectField("avatarUrl");
+        $this->selectField('avatarUrl');
 
         return $this;
     }
 
     public function selectCreatedAt()
     {
-        $this->selectField("created_at");
+        $this->selectField('created_at');
 
         return $this;
     }
 
     public function selectDepartmentKey()
     {
-        $this->selectField("departmentKey");
+        $this->selectField('departmentKey');
 
         return $this;
     }
 
     public function selectDisplayName()
     {
-        $this->selectField("displayName");
+        $this->selectField('displayName');
 
         return $this;
     }
 
     public function selectEmail()
     {
-        $this->selectField("email");
+        $this->selectField('email');
 
         return $this;
     }
 
     public function selectHasUnreadNotifications()
     {
-        $this->selectField("hasUnreadNotifications");
+        $this->selectField('hasUnreadNotifications');
 
         return $this;
     }
 
     public function selectId()
     {
-        $this->selectField("id");
+        $this->selectField('id');
 
         return $this;
     }
 
     public function selectLocale()
     {
-        $this->selectField("locale");
+        $this->selectField('locale');
 
         return $this;
     }
 
     public function selectName()
     {
-        $this->selectField("name");
+        $this->selectField('name');
 
         return $this;
     }
 
     public function selectPreferences(UserPreferencesArgumentsObject $argsObject = null)
     {
-        $object = new UserPreferenceQueryObject("preferences");
+        $object = new UserPreferenceQueryObject('preferences');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -82,14 +82,14 @@ class UserQueryObject extends QueryObject
 
     public function selectTimeZone()
     {
-        $this->selectField("timeZone");
+        $this->selectField('timeZone');
 
         return $this;
     }
 
     public function selectUsername()
     {
-        $this->selectField("username");
+        $this->selectField('username');
 
         return $this;
     }

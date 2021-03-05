@@ -4,11 +4,11 @@ namespace GraphQL\SchemaObject;
 
 class ImprovementQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "Improvement";
+    public const OBJECT_NAME = 'Improvement';
 
     public function selectApp(ImprovementAppArgumentsObject $argsObject = null)
     {
-        $object = new PlatformAppQueryObject("app");
+        $object = new PlatformAppQueryObject('app');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -19,35 +19,35 @@ class ImprovementQueryObject extends QueryObject
 
     public function selectClicked()
     {
-        $this->selectField("clicked");
+        $this->selectField('clicked');
 
         return $this;
     }
 
     public function selectDismissed()
     {
-        $this->selectField("dismissed");
+        $this->selectField('dismissed');
 
         return $this;
     }
 
     public function selectEnabled()
     {
-        $this->selectField("enabled");
+        $this->selectField('enabled');
 
         return $this;
     }
 
     public function selectId()
     {
-        $this->selectField("id");
+        $this->selectField('id');
 
         return $this;
     }
 
     public function selectLink(ImprovementLinkArgumentsObject $argsObject = null)
     {
-        $object = new HelpLinkQueryObject("link");
+        $object = new HelpLinkQueryObject('link');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -58,7 +58,7 @@ class ImprovementQueryObject extends QueryObject
 
     public function selectViewed()
     {
-        $this->selectField("viewed");
+        $this->selectField('viewed');
 
         return $this;
     }

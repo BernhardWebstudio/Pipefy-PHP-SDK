@@ -5,6 +5,7 @@ namespace GraphQL\SchemaObject;
 class ReferenceConnectorFieldInputInputObject extends InputObject
 {
     protected $fieldId;
+
     protected $nextConnectorField;
 
     public function setFieldId($fieldId)
@@ -14,8 +15,9 @@ class ReferenceConnectorFieldInputInputObject extends InputObject
         return $this;
     }
 
-    public function setNextConnectorField(ReferenceConnectorFieldInputInputObject $referenceConnectorFieldInputInputObject)
-    {
+    public function setNextConnectorField(
+        self $referenceConnectorFieldInputInputObject
+    ) {
         $this->nextConnectorField = $referenceConnectorFieldInputInputObject;
 
         return $this;

@@ -4,11 +4,11 @@ namespace GraphQL\SchemaObject;
 
 class PhaseFieldConnectionQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "PhaseFieldConnection";
+    public const OBJECT_NAME = 'PhaseFieldConnection';
 
     public function selectEdges(PhaseFieldConnectionEdgesArgumentsObject $argsObject = null)
     {
-        $object = new PhaseFieldEdgeQueryObject("edges");
+        $object = new PhaseFieldEdgeQueryObject('edges');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -19,7 +19,7 @@ class PhaseFieldConnectionQueryObject extends QueryObject
 
     public function selectPageInfo(PhaseFieldConnectionPageInfoArgumentsObject $argsObject = null)
     {
-        $object = new PageInfoQueryObject("pageInfo");
+        $object = new PageInfoQueryObject('pageInfo');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }

@@ -4,9 +4,13 @@ namespace GraphQL\SchemaObject;
 
 class AdvancedSearchOperatorsEnumObject extends EnumObject
 {
-    const EQUAL = "equal";
-    const GT = "gt";
-    const GTE = "gte";
-    const LT = "lt";
-    const LTE = "lte";
+    public const EQUAL = 'equal';
+
+    public const GT = 'gt';
+
+    public const GTE = 'gte';
+
+    public const LT = 'lt';
+
+    public const LTE = 'lte';
 }

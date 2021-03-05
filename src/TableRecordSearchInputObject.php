@@ -5,11 +5,17 @@ namespace GraphQL\SchemaObject;
 class TableRecordSearchInputObject extends InputObject
 {
     protected $assignee_ids;
+
     protected $ignore_ids;
+
     protected $label_ids;
+
     protected $orderDirection;
+
     protected $orderField;
+
     protected $title;
+
     protected $include_done;
 
     public function setAssigneeIds(array $assigneeIds)

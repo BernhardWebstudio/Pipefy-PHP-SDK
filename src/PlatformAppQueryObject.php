@@ -4,11 +4,11 @@ namespace GraphQL\SchemaObject;
 
 class PlatformAppQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "PlatformApp";
+    public const OBJECT_NAME = 'PlatformApp';
 
     public function selectAttachmentsConnection(PlatformAppAttachmentsConnectionArgumentsObject $argsObject = null)
     {
-        $object = new AppAttachmentConnectionQueryObject("attachments_connection");
+        $object = new AppAttachmentConnectionQueryObject('attachments_connection');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -19,35 +19,35 @@ class PlatformAppQueryObject extends QueryObject
 
     public function selectId()
     {
-        $this->selectField("id");
+        $this->selectField('id');
 
         return $this;
     }
 
     public function selectName()
     {
-        $this->selectField("name");
+        $this->selectField('name');
 
         return $this;
     }
 
     public function selectPublic()
     {
-        $this->selectField("public");
+        $this->selectField('public');
 
         return $this;
     }
 
     public function selectSlug()
     {
-        $this->selectField("slug");
+        $this->selectField('slug');
 
         return $this;
     }
 
     public function selectUrl()
     {
-        $this->selectField("url");
+        $this->selectField('url');
 
         return $this;
     }

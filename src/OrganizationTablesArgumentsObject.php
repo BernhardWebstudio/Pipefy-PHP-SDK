@@ -5,9 +5,13 @@ namespace GraphQL\SchemaObject;
 class OrganizationTablesArgumentsObject extends ArgumentsObject
 {
     protected $first;
+
     protected $after;
+
     protected $last;
+
     protected $before;
+
     protected $name_search;
 
     public function setFirst($first)

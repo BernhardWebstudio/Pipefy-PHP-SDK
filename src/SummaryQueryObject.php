@@ -4,25 +4,25 @@ namespace GraphQL\SchemaObject;
 
 class SummaryQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "Summary";
+    public const OBJECT_NAME = 'Summary';
 
     public function selectTitle()
     {
-        $this->selectField("title");
+        $this->selectField('title');
 
         return $this;
     }
 
     public function selectType()
     {
-        $this->selectField("type");
+        $this->selectField('type');
 
         return $this;
     }
 
     public function selectValue()
     {
-        $this->selectField("value");
+        $this->selectField('value');
 
         return $this;
     }

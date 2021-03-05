@@ -5,9 +5,13 @@ namespace GraphQL\SchemaObject;
 class PhaseCardsArgumentsObject extends ArgumentsObject
 {
     protected $first;
+
     protected $after;
+
     protected $last;
+
     protected $before;
+
     protected $search;
 
     public function setFirst($first)

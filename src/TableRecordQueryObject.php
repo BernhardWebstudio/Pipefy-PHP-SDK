@@ -4,11 +4,11 @@ namespace GraphQL\SchemaObject;
 
 class TableRecordQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "TableRecord";
+    public const OBJECT_NAME = 'TableRecord';
 
     public function selectAssignees(TableRecordAssigneesArgumentsObject $argsObject = null)
     {
-        $object = new UserQueryObject("assignees");
+        $object = new UserQueryObject('assignees');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -19,14 +19,14 @@ class TableRecordQueryObject extends QueryObject
 
     public function selectCreatedAt()
     {
-        $this->selectField("created_at");
+        $this->selectField('created_at');
 
         return $this;
     }
 
     public function selectCreatedBy(TableRecordCreatedByArgumentsObject $argsObject = null)
     {
-        $object = new UserQueryObject("created_by");
+        $object = new UserQueryObject('created_by');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -37,35 +37,35 @@ class TableRecordQueryObject extends QueryObject
 
     public function selectDone()
     {
-        $this->selectField("done");
+        $this->selectField('done');
 
         return $this;
     }
 
     public function selectDueDate()
     {
-        $this->selectField("due_date");
+        $this->selectField('due_date');
 
         return $this;
     }
 
     public function selectFinishedAt()
     {
-        $this->selectField("finished_at");
+        $this->selectField('finished_at');
 
         return $this;
     }
 
     public function selectId()
     {
-        $this->selectField("id");
+        $this->selectField('id');
 
         return $this;
     }
 
     public function selectLabels(TableRecordLabelsArgumentsObject $argsObject = null)
     {
-        $object = new LabelQueryObject("labels");
+        $object = new LabelQueryObject('labels');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -76,7 +76,7 @@ class TableRecordQueryObject extends QueryObject
 
     public function selectParentRelations(TableRecordParentRelationsArgumentsObject $argsObject = null)
     {
-        $object = new TableRecordRelationQueryObject("parent_relations");
+        $object = new TableRecordRelationQueryObject('parent_relations');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -87,14 +87,14 @@ class TableRecordQueryObject extends QueryObject
 
     public function selectPath()
     {
-        $this->selectField("path");
+        $this->selectField('path');
 
         return $this;
     }
 
     public function selectRecordFields(TableRecordRecordFieldsArgumentsObject $argsObject = null)
     {
-        $object = new TableRecordFieldQueryObject("record_fields");
+        $object = new TableRecordFieldQueryObject('record_fields');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -105,7 +105,7 @@ class TableRecordQueryObject extends QueryObject
 
     public function selectStatus(TableRecordStatusArgumentsObject $argsObject = null)
     {
-        $object = new TableRecordStatusQueryObject("status");
+        $object = new TableRecordStatusQueryObject('status');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -116,7 +116,7 @@ class TableRecordQueryObject extends QueryObject
 
     public function selectSummary(TableRecordSummaryArgumentsObject $argsObject = null)
     {
-        $object = new SummaryQueryObject("summary");
+        $object = new SummaryQueryObject('summary');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -127,7 +127,7 @@ class TableRecordQueryObject extends QueryObject
 
     public function selectTable(TableRecordTableArgumentsObject $argsObject = null)
     {
-        $object = new TableQueryObject("table");
+        $object = new TableQueryObject('table');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -138,21 +138,21 @@ class TableRecordQueryObject extends QueryObject
 
     public function selectTitle()
     {
-        $this->selectField("title");
+        $this->selectField('title');
 
         return $this;
     }
 
     public function selectUpdatedAt()
     {
-        $this->selectField("updated_at");
+        $this->selectField('updated_at');
 
         return $this;
     }
 
     public function selectUrl()
     {
-        $this->selectField("url");
+        $this->selectField('url');
 
         return $this;
     }

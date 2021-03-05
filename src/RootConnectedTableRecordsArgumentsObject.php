@@ -5,11 +5,17 @@ namespace GraphQL\SchemaObject;
 class RootConnectedTableRecordsArgumentsObject extends ArgumentsObject
 {
     protected $first;
+
     protected $after;
+
     protected $last;
+
     protected $before;
+
     protected $tableId;
+
     protected $throughConnectors;
+
     protected $search;
 
     public function setFirst($first)
@@ -47,8 +53,9 @@ class RootConnectedTableRecordsArgumentsObject extends ArgumentsObject
         return $this;
     }
 
-    public function setThroughConnectors(ReferenceConnectorFieldInputInputObject $referenceConnectorFieldInputInputObject)
-    {
+    public function setThroughConnectors(
+        ReferenceConnectorFieldInputInputObject $referenceConnectorFieldInputInputObject
+    ) {
         $this->throughConnectors = $referenceConnectorFieldInputInputObject;
 
         return $this;

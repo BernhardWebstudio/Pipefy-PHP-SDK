@@ -5,6 +5,7 @@ namespace GraphQL\SchemaObject;
 class FilledFieldInputObject extends InputObject
 {
     protected $fieldId;
+
     protected $fieldValue;
 
     public function setFieldId($fieldId)

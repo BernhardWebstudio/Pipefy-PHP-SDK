@@ -5,6 +5,7 @@ namespace GraphQL\SchemaObject;
 class RootRecordsImportationsArgumentsObject extends ArgumentsObject
 {
     protected $tableId;
+
     protected $status;
 
     public function setTableId($tableId)

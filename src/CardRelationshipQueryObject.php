@@ -4,11 +4,11 @@ namespace GraphQL\SchemaObject;
 
 class CardRelationshipQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "CardRelationship";
+    public const OBJECT_NAME = 'CardRelationship';
 
     public function selectCards(CardRelationshipCardsArgumentsObject $argsObject = null)
     {
-        $object = new CardQueryObject("cards");
+        $object = new CardQueryObject('cards');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -19,21 +19,21 @@ class CardRelationshipQueryObject extends QueryObject
 
     public function selectId()
     {
-        $this->selectField("id");
+        $this->selectField('id');
 
         return $this;
     }
 
     public function selectName()
     {
-        $this->selectField("name");
+        $this->selectField('name');
 
         return $this;
     }
 
     public function selectPipe(CardRelationshipPipeArgumentsObject $argsObject = null)
     {
-        $object = new PipeQueryObject("pipe");
+        $object = new PipeQueryObject('pipe');
         if ($argsObject !== null) {
             $object->appendArguments($argsObject->toArray());
         }
@@ -44,7 +44,7 @@ class CardRelationshipQueryObject extends QueryObject
 
     public function selectSourceType()
     {
-        $this->selectField("source_type");
+        $this->selectField('source_type');
 
         return $this;
     }

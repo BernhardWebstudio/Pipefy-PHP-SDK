@@ -5,9 +5,13 @@ namespace GraphQL\SchemaObject;
 class AdvancedSearchInputObject extends InputObject
 {
     protected $field;
+
     protected $operator;
+
     protected $value;
+
     protected $AND;
+
     protected $OR;
 
     public function setField($field)

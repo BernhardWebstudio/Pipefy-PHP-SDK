@@ -5,10 +5,15 @@ namespace GraphQL\SchemaObject;
 class OrganizationPipesArgumentsObject extends ArgumentsObject
 {
     protected $ids;
+
     protected $include_publics;
+
     protected $with_permission;
+
     protected $anyone_can_create_card;
+
     protected $onlyFullyVisible;
+
     protected $name_search;
 
     public function setIds(array $ids)

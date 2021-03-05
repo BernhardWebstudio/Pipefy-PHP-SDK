@@ -5,7 +5,9 @@ namespace GraphQL\SchemaObject;
 class RootConditionalFieldArgumentsObject extends ArgumentsObject
 {
     protected $repoId;
+
     protected $cardId;
+
     protected $overrideFieldValue;
 
     public function setRepoId($repoId)

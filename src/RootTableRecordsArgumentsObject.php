@@ -5,10 +5,15 @@ namespace GraphQL\SchemaObject;
 class RootTableRecordsArgumentsObject extends ArgumentsObject
 {
     protected $first;
+
     protected $after;
+
     protected $last;
+
     protected $before;
+
     protected $table_id;
+
     protected $search;
 
     public function setFirst($first)

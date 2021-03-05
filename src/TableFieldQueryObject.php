@@ -4,137 +4,137 @@ namespace GraphQL\SchemaObject;
 
 class TableFieldQueryObject extends QueryObject
 {
-    const OBJECT_NAME = "TableField";
+    public const OBJECT_NAME = 'TableField';
 
     public function selectAllChildrenMustBeDoneToFinishParent()
     {
-        $this->selectField("allChildrenMustBeDoneToFinishParent");
+        $this->selectField('allChildrenMustBeDoneToFinishParent');
 
         return $this;
     }
 
     public function selectCanConnectExisting()
     {
-        $this->selectField("canConnectExisting");
+        $this->selectField('canConnectExisting');
 
         return $this;
     }
 
     public function selectCanConnectMultiples()
     {
-        $this->selectField("canConnectMultiples");
+        $this->selectField('canConnectMultiples');
 
         return $this;
     }
 
     public function selectCanCreateNewConnected()
     {
-        $this->selectField("canCreateNewConnected");
+        $this->selectField('canCreateNewConnected');
 
         return $this;
     }
 
     public function selectChildMustExistToFinishParent()
     {
-        $this->selectField("childMustExistToFinishParent");
+        $this->selectField('childMustExistToFinishParent');
 
         return $this;
     }
 
     public function selectCustomValidation()
     {
-        $this->selectField("custom_validation");
+        $this->selectField('custom_validation');
 
         return $this;
     }
 
     public function selectDescription()
     {
-        $this->selectField("description");
+        $this->selectField('description');
 
         return $this;
     }
 
     public function selectHelp()
     {
-        $this->selectField("help");
+        $this->selectField('help');
 
         return $this;
     }
 
     public function selectId()
     {
-        $this->selectField("id");
+        $this->selectField('id');
 
         return $this;
     }
 
     public function selectIndexName()
     {
-        $this->selectField("index_name");
+        $this->selectField('index_name');
 
         return $this;
     }
 
     public function selectInternalId()
     {
-        $this->selectField("internal_id");
+        $this->selectField('internal_id');
 
         return $this;
     }
 
     public function selectIsMultiple()
     {
-        $this->selectField("is_multiple");
+        $this->selectField('is_multiple');
 
         return $this;
     }
 
     public function selectLabel()
     {
-        $this->selectField("label");
+        $this->selectField('label');
 
         return $this;
     }
 
     public function selectMinimalView()
     {
-        $this->selectField("minimal_view");
+        $this->selectField('minimal_view');
 
         return $this;
     }
 
     public function selectOptions()
     {
-        $this->selectField("options");
+        $this->selectField('options');
 
         return $this;
     }
 
     public function selectRequired()
     {
-        $this->selectField("required");
+        $this->selectField('required');
 
         return $this;
     }
 
     public function selectType()
     {
-        $this->selectField("type");
+        $this->selectField('type');
 
         return $this;
     }
 
     public function selectUnique()
     {
-        $this->selectField("unique");
+        $this->selectField('unique');
 
         return $this;
     }
 
     public function selectUuid()
     {
-        $this->selectField("uuid");
+        $this->selectField('uuid');
 
         return $this;
     }
