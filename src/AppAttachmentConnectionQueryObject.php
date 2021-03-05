@@ -4,27 +4,25 @@ namespace GraphQL\SchemaObject;
 
 class AppAttachmentConnectionQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'AppAttachmentConnection';
-
-    public function selectEdges(AppAttachmentConnectionEdgesArgumentsObject $argsObject = null)
+    public function selectEdges(AppAttachmentConnectionEdgesArgumentsObject $appAttachmentConnectionEdgesArgumentsObject = null): AppAttachmentEdgeQueryObject
     {
-        $object = new AppAttachmentEdgeQueryObject('edges');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $appAttachmentEdgeQueryObject = new AppAttachmentEdgeQueryObject('edges');
+        if ($appAttachmentConnectionEdgesArgumentsObject !== null) {
+            $appAttachmentEdgeQueryObject->appendArguments($appAttachmentConnectionEdgesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($appAttachmentEdgeQueryObject);
 
-        return $object;
+        return $appAttachmentEdgeQueryObject;
     }
 
-    public function selectPageInfo(AppAttachmentConnectionPageInfoArgumentsObject $argsObject = null)
+    public function selectPageInfo(AppAttachmentConnectionPageInfoArgumentsObject $appAttachmentConnectionPageInfoArgumentsObject = null): PageInfoQueryObject
     {
-        $object = new PageInfoQueryObject('pageInfo');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $pageInfoQueryObject = new PageInfoQueryObject('pageInfo');
+        if ($appAttachmentConnectionPageInfoArgumentsObject !== null) {
+            $pageInfoQueryObject->appendArguments($appAttachmentConnectionPageInfoArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($pageInfoQueryObject);
 
-        return $object;
+        return $pageInfoQueryObject;
     }
 }

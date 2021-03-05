@@ -4,45 +4,43 @@ namespace GraphQL\SchemaObject;
 
 class CardRelationshipQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'CardRelationship';
-
-    public function selectCards(CardRelationshipCardsArgumentsObject $argsObject = null)
+    public function selectCards(CardRelationshipCardsArgumentsObject $cardRelationshipCardsArgumentsObject = null): CardQueryObject
     {
-        $object = new CardQueryObject('cards');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $cardQueryObject = new CardQueryObject('cards');
+        if ($cardRelationshipCardsArgumentsObject !== null) {
+            $cardQueryObject->appendArguments($cardRelationshipCardsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($cardQueryObject);
 
-        return $object;
+        return $cardQueryObject;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectName()
+    public function selectName(): static
     {
         $this->selectField('name');
 
         return $this;
     }
 
-    public function selectPipe(CardRelationshipPipeArgumentsObject $argsObject = null)
+    public function selectPipe(CardRelationshipPipeArgumentsObject $cardRelationshipPipeArgumentsObject = null): PipeQueryObject
     {
-        $object = new PipeQueryObject('pipe');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $pipeQueryObject = new PipeQueryObject('pipe');
+        if ($cardRelationshipPipeArgumentsObject !== null) {
+            $pipeQueryObject->appendArguments($cardRelationshipPipeArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($pipeQueryObject);
 
-        return $object;
+        return $pipeQueryObject;
     }
 
-    public function selectSourceType()
+    public function selectSourceType(): static
     {
         $this->selectField('source_type');
 

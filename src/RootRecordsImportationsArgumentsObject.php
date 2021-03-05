@@ -6,16 +6,22 @@ class RootRecordsImportationsArgumentsObject extends ArgumentsObject
 {
     protected $tableId;
 
+    /**
+     * @var mixed[]|null
+     */
     protected $status;
 
-    public function setTableId($tableId)
+    public function setTableId($tableId): static
     {
         $this->tableId = $tableId;
 
         return $this;
     }
 
-    public function setStatus(array $status)
+    /**
+     * @param mixed[]|null $status
+     */
+    public function setStatus(array $status): static
     {
         $this->status = $status;
 

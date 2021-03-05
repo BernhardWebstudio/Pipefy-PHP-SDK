@@ -4,27 +4,25 @@ namespace GraphQL\SchemaObject;
 
 class PublicTableRecordConnectionQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'PublicTableRecordConnection';
-
-    public function selectEdges(PublicTableRecordConnectionEdgesArgumentsObject $argsObject = null)
+    public function selectEdges(PublicTableRecordConnectionEdgesArgumentsObject $publicTableRecordConnectionEdgesArgumentsObject = null): PublicTableRecordEdgeQueryObject
     {
-        $object = new PublicTableRecordEdgeQueryObject('edges');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $publicTableRecordEdgeQueryObject = new PublicTableRecordEdgeQueryObject('edges');
+        if ($publicTableRecordConnectionEdgesArgumentsObject !== null) {
+            $publicTableRecordEdgeQueryObject->appendArguments($publicTableRecordConnectionEdgesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($publicTableRecordEdgeQueryObject);
 
-        return $object;
+        return $publicTableRecordEdgeQueryObject;
     }
 
-    public function selectPageInfo(PublicTableRecordConnectionPageInfoArgumentsObject $argsObject = null)
+    public function selectPageInfo(PublicTableRecordConnectionPageInfoArgumentsObject $publicTableRecordConnectionPageInfoArgumentsObject = null): PageInfoQueryObject
     {
-        $object = new PageInfoQueryObject('pageInfo');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $pageInfoQueryObject = new PageInfoQueryObject('pageInfo');
+        if ($publicTableRecordConnectionPageInfoArgumentsObject !== null) {
+            $pageInfoQueryObject->appendArguments($publicTableRecordConnectionPageInfoArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($pageInfoQueryObject);
 
-        return $object;
+        return $pageInfoQueryObject;
     }
 }

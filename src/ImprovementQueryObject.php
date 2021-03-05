@@ -4,59 +4,57 @@ namespace GraphQL\SchemaObject;
 
 class ImprovementQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'Improvement';
-
-    public function selectApp(ImprovementAppArgumentsObject $argsObject = null)
+    public function selectApp(ImprovementAppArgumentsObject $improvementAppArgumentsObject = null): PlatformAppQueryObject
     {
-        $object = new PlatformAppQueryObject('app');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $platformAppQueryObject = new PlatformAppQueryObject('app');
+        if ($improvementAppArgumentsObject !== null) {
+            $platformAppQueryObject->appendArguments($improvementAppArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($platformAppQueryObject);
 
-        return $object;
+        return $platformAppQueryObject;
     }
 
-    public function selectClicked()
+    public function selectClicked(): static
     {
         $this->selectField('clicked');
 
         return $this;
     }
 
-    public function selectDismissed()
+    public function selectDismissed(): static
     {
         $this->selectField('dismissed');
 
         return $this;
     }
 
-    public function selectEnabled()
+    public function selectEnabled(): static
     {
         $this->selectField('enabled');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectLink(ImprovementLinkArgumentsObject $argsObject = null)
+    public function selectLink(ImprovementLinkArgumentsObject $improvementLinkArgumentsObject = null): HelpLinkQueryObject
     {
-        $object = new HelpLinkQueryObject('link');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $helpLinkQueryObject = new HelpLinkQueryObject('link');
+        if ($improvementLinkArgumentsObject !== null) {
+            $helpLinkQueryObject->appendArguments($improvementLinkArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($helpLinkQueryObject);
 
-        return $object;
+        return $helpLinkQueryObject;
     }
 
-    public function selectViewed()
+    public function selectViewed(): static
     {
         $this->selectField('viewed');
 

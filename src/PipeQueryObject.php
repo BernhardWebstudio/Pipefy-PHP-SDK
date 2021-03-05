@@ -4,371 +4,369 @@ namespace GraphQL\SchemaObject;
 
 class PipeQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'Pipe';
-
-    public function selectAnyoneCanCreateCard()
+    public function selectAnyoneCanCreateCard(): static
     {
         $this->selectField('anyone_can_create_card');
 
         return $this;
     }
 
-    public function selectCardsCount()
+    public function selectCardsCount(): static
     {
         $this->selectField('cards_count');
 
         return $this;
     }
 
-    public function selectChildrenRelations(PipeChildrenRelationsArgumentsObject $argsObject = null)
+    public function selectChildrenRelations(PipeChildrenRelationsArgumentsObject $pipeChildrenRelationsArgumentsObject = null): PipeRelationQueryObject
     {
-        $object = new PipeRelationQueryObject('childrenRelations');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $pipeRelationQueryObject = new PipeRelationQueryObject('childrenRelations');
+        if ($pipeChildrenRelationsArgumentsObject !== null) {
+            $pipeRelationQueryObject->appendArguments($pipeChildrenRelationsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($pipeRelationQueryObject);
 
-        return $object;
+        return $pipeRelationQueryObject;
     }
 
-    public function selectCloneFromId()
+    public function selectCloneFromId(): static
     {
         $this->selectField('clone_from_id');
 
         return $this;
     }
 
-    public function selectColor()
+    public function selectColor(): static
     {
         $this->selectField('color');
 
         return $this;
     }
 
-    public function selectConditionExpressionsFieldIds()
+    public function selectConditionExpressionsFieldIds(): static
     {
         $this->selectField('conditionExpressionsFieldIds');
 
         return $this;
     }
 
-    public function selectCreateCardLabel()
+    public function selectCreateCardLabel(): static
     {
         $this->selectField('create_card_label');
 
         return $this;
     }
 
-    public function selectCreatedAt()
+    public function selectCreatedAt(): static
     {
         $this->selectField('created_at');
 
         return $this;
     }
 
-    public function selectDescription()
+    public function selectDescription(): static
     {
         $this->selectField('description');
 
         return $this;
     }
 
-    public function selectEmailAddress()
+    public function selectEmailAddress(): static
     {
         $this->selectField('emailAddress');
 
         return $this;
     }
 
-    public function selectExpirationTimeByUnit()
+    public function selectExpirationTimeByUnit(): static
     {
         $this->selectField('expiration_time_by_unit');
 
         return $this;
     }
 
-    public function selectExpirationUnit()
+    public function selectExpirationUnit(): static
     {
         $this->selectField('expiration_unit');
 
         return $this;
     }
 
-    public function selectFieldConditions(PipeFieldConditionsArgumentsObject $argsObject = null)
+    public function selectFieldConditions(PipeFieldConditionsArgumentsObject $pipeFieldConditionsArgumentsObject = null): FieldConditionQueryObject
     {
-        $object = new FieldConditionQueryObject('fieldConditions');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $fieldConditionQueryObject = new FieldConditionQueryObject('fieldConditions');
+        if ($pipeFieldConditionsArgumentsObject !== null) {
+            $fieldConditionQueryObject->appendArguments($pipeFieldConditionsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($fieldConditionQueryObject);
 
-        return $object;
+        return $fieldConditionQueryObject;
     }
 
-    public function selectIcon()
+    public function selectIcon(): static
     {
         $this->selectField('icon');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectImprovementSetting(PipeImprovementSettingArgumentsObject $argsObject = null)
+    public function selectImprovementSetting(PipeImprovementSettingArgumentsObject $pipeImprovementSettingArgumentsObject = null): ImprovementSettingQueryObject
     {
-        $object = new ImprovementSettingQueryObject('improvementSetting');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $improvementSettingQueryObject = new ImprovementSettingQueryObject('improvementSetting');
+        if ($pipeImprovementSettingArgumentsObject !== null) {
+            $improvementSettingQueryObject->appendArguments($pipeImprovementSettingArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($improvementSettingQueryObject);
 
-        return $object;
+        return $improvementSettingQueryObject;
     }
 
-    public function selectLabels(PipeLabelsArgumentsObject $argsObject = null)
+    public function selectLabels(PipeLabelsArgumentsObject $pipeLabelsArgumentsObject = null): LabelQueryObject
     {
-        $object = new LabelQueryObject('labels');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $labelQueryObject = new LabelQueryObject('labels');
+        if ($pipeLabelsArgumentsObject !== null) {
+            $labelQueryObject->appendArguments($pipeLabelsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($labelQueryObject);
 
-        return $object;
+        return $labelQueryObject;
     }
 
-    public function selectLastUpdatedByCard()
+    public function selectLastUpdatedByCard(): static
     {
         $this->selectField('last_updated_by_card');
 
         return $this;
     }
 
-    public function selectMembers(PipeMembersArgumentsObject $argsObject = null)
+    public function selectMembers(PipeMembersArgumentsObject $pipeMembersArgumentsObject = null): MemberQueryObject
     {
-        $object = new MemberQueryObject('members');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $memberQueryObject = new MemberQueryObject('members');
+        if ($pipeMembersArgumentsObject !== null) {
+            $memberQueryObject->appendArguments($pipeMembersArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($memberQueryObject);
 
-        return $object;
+        return $memberQueryObject;
     }
 
-    public function selectName()
+    public function selectName(): static
     {
         $this->selectField('name');
 
         return $this;
     }
 
-    public function selectOnlyAdminCanRemoveCards()
+    public function selectOnlyAdminCanRemoveCards(): static
     {
         $this->selectField('only_admin_can_remove_cards');
 
         return $this;
     }
 
-    public function selectOnlyAssigneesCanEditCards()
+    public function selectOnlyAssigneesCanEditCards(): static
     {
         $this->selectField('only_assignees_can_edit_cards');
 
         return $this;
     }
 
-    public function selectOpenedCardsCount()
+    public function selectOpenedCardsCount(): static
     {
         $this->selectField('opened_cards_count');
 
         return $this;
     }
 
-    public function selectOrganization(PipeOrganizationArgumentsObject $argsObject = null)
+    public function selectOrganization(PipeOrganizationArgumentsObject $pipeOrganizationArgumentsObject = null): OrganizationQueryObject
     {
-        $object = new OrganizationQueryObject('organization');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $organizationQueryObject = new OrganizationQueryObject('organization');
+        if ($pipeOrganizationArgumentsObject !== null) {
+            $organizationQueryObject->appendArguments($pipeOrganizationArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($organizationQueryObject);
 
-        return $object;
+        return $organizationQueryObject;
     }
 
-    public function selectParentsRelations(PipeParentsRelationsArgumentsObject $argsObject = null)
+    public function selectParentsRelations(PipeParentsRelationsArgumentsObject $pipeParentsRelationsArgumentsObject = null): PipeRelationQueryObject
     {
-        $object = new PipeRelationQueryObject('parentsRelations');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $pipeRelationQueryObject = new PipeRelationQueryObject('parentsRelations');
+        if ($pipeParentsRelationsArgumentsObject !== null) {
+            $pipeRelationQueryObject->appendArguments($pipeParentsRelationsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($pipeRelationQueryObject);
 
-        return $object;
+        return $pipeRelationQueryObject;
     }
 
-    public function selectPhases(PipePhasesArgumentsObject $argsObject = null)
+    public function selectPhases(PipePhasesArgumentsObject $pipePhasesArgumentsObject = null): PhaseQueryObject
     {
-        $object = new PhaseQueryObject('phases');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseQueryObject = new PhaseQueryObject('phases');
+        if ($pipePhasesArgumentsObject !== null) {
+            $phaseQueryObject->appendArguments($pipePhasesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseQueryObject);
 
-        return $object;
+        return $phaseQueryObject;
     }
 
-    public function selectPreferences(PipePreferencesArgumentsObject $argsObject = null)
+    public function selectPreferences(PipePreferencesArgumentsObject $pipePreferencesArgumentsObject = null): RepoPreferenceQueryObject
     {
-        $object = new RepoPreferenceQueryObject('preferences');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $repoPreferenceQueryObject = new RepoPreferenceQueryObject('preferences');
+        if ($pipePreferencesArgumentsObject !== null) {
+            $repoPreferenceQueryObject->appendArguments($pipePreferencesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($repoPreferenceQueryObject);
 
-        return $object;
+        return $repoPreferenceQueryObject;
     }
 
-    public function selectPublic()
+    public function selectPublic(): static
     {
         $this->selectField('public');
 
         return $this;
     }
 
-    public function selectPublicFormSettings(PipePublicFormSettingsArgumentsObject $argsObject = null)
+    public function selectPublicFormSettings(PipePublicFormSettingsArgumentsObject $pipePublicFormSettingsArgumentsObject = null): PublicFormSettingsQueryObject
     {
-        $object = new PublicFormSettingsQueryObject('publicFormSettings');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $publicFormSettingsQueryObject = new PublicFormSettingsQueryObject('publicFormSettings');
+        if ($pipePublicFormSettingsArgumentsObject !== null) {
+            $publicFormSettingsQueryObject->appendArguments($pipePublicFormSettingsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($publicFormSettingsQueryObject);
 
-        return $object;
+        return $publicFormSettingsQueryObject;
     }
 
-    public function selectPublicForm()
+    public function selectPublicForm(): static
     {
         $this->selectField('public_form');
 
         return $this;
     }
 
-    public function selectRole()
+    public function selectRole(): static
     {
         $this->selectField('role');
 
         return $this;
     }
 
-    public function selectStartFormFieldConditions(PipeStartFormFieldConditionsArgumentsObject $argsObject = null)
+    public function selectStartFormFieldConditions(PipeStartFormFieldConditionsArgumentsObject $pipeStartFormFieldConditionsArgumentsObject = null): FieldConditionQueryObject
     {
-        $object = new FieldConditionQueryObject('startFormFieldConditions');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $fieldConditionQueryObject = new FieldConditionQueryObject('startFormFieldConditions');
+        if ($pipeStartFormFieldConditionsArgumentsObject !== null) {
+            $fieldConditionQueryObject->appendArguments($pipeStartFormFieldConditionsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($fieldConditionQueryObject);
 
-        return $object;
+        return $fieldConditionQueryObject;
     }
 
-    public function selectStartFormFields(PipeStartFormFieldsArgumentsObject $argsObject = null)
+    public function selectStartFormFields(PipeStartFormFieldsArgumentsObject $pipeStartFormFieldsArgumentsObject = null): PhaseFieldQueryObject
     {
-        $object = new PhaseFieldQueryObject('start_form_fields');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseFieldQueryObject = new PhaseFieldQueryObject('start_form_fields');
+        if ($pipeStartFormFieldsArgumentsObject !== null) {
+            $phaseFieldQueryObject->appendArguments($pipeStartFormFieldsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseFieldQueryObject);
 
-        return $object;
+        return $phaseFieldQueryObject;
     }
 
-    public function selectSubtitleFields(PipeSubtitleFieldsArgumentsObject $argsObject = null)
+    public function selectSubtitleFields(PipeSubtitleFieldsArgumentsObject $pipeSubtitleFieldsArgumentsObject = null): PhaseFieldConnectionQueryObject
     {
-        $object = new PhaseFieldConnectionQueryObject('subtitleFields');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseFieldConnectionQueryObject = new PhaseFieldConnectionQueryObject('subtitleFields');
+        if ($pipeSubtitleFieldsArgumentsObject !== null) {
+            $phaseFieldConnectionQueryObject->appendArguments($pipeSubtitleFieldsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseFieldConnectionQueryObject);
 
-        return $object;
+        return $phaseFieldConnectionQueryObject;
     }
 
-    public function selectSuid()
+    public function selectSuid(): static
     {
         $this->selectField('suid');
 
         return $this;
     }
 
-    public function selectSummaryAttributes(PipeSummaryAttributesArgumentsObject $argsObject = null)
+    public function selectSummaryAttributes(PipeSummaryAttributesArgumentsObject $pipeSummaryAttributesArgumentsObject = null): SummaryAttributeQueryObject
     {
-        $object = new SummaryAttributeQueryObject('summary_attributes');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $summaryAttributeQueryObject = new SummaryAttributeQueryObject('summary_attributes');
+        if ($pipeSummaryAttributesArgumentsObject !== null) {
+            $summaryAttributeQueryObject->appendArguments($pipeSummaryAttributesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($summaryAttributeQueryObject);
 
-        return $object;
+        return $summaryAttributeQueryObject;
     }
 
-    public function selectSummaryOptions(PipeSummaryOptionsArgumentsObject $argsObject = null)
+    public function selectSummaryOptions(PipeSummaryOptionsArgumentsObject $pipeSummaryOptionsArgumentsObject = null): SummaryGroupQueryObject
     {
-        $object = new SummaryGroupQueryObject('summary_options');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $summaryGroupQueryObject = new SummaryGroupQueryObject('summary_options');
+        if ($pipeSummaryOptionsArgumentsObject !== null) {
+            $summaryGroupQueryObject->appendArguments($pipeSummaryOptionsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($summaryGroupQueryObject);
 
-        return $object;
+        return $summaryGroupQueryObject;
     }
 
-    public function selectTitleField(PipeTitleFieldArgumentsObject $argsObject = null)
+    public function selectTitleField(PipeTitleFieldArgumentsObject $pipeTitleFieldArgumentsObject = null): PhaseFieldQueryObject
     {
-        $object = new PhaseFieldQueryObject('title_field');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseFieldQueryObject = new PhaseFieldQueryObject('title_field');
+        if ($pipeTitleFieldArgumentsObject !== null) {
+            $phaseFieldQueryObject->appendArguments($pipeTitleFieldArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseFieldQueryObject);
 
-        return $object;
+        return $phaseFieldQueryObject;
     }
 
-    public function selectUsers(PipeUsersArgumentsObject $argsObject = null)
+    public function selectUsers(PipeUsersArgumentsObject $pipeUsersArgumentsObject = null): UserQueryObject
     {
-        $object = new UserQueryObject('users');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $userQueryObject = new UserQueryObject('users');
+        if ($pipeUsersArgumentsObject !== null) {
+            $userQueryObject->appendArguments($pipeUsersArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($userQueryObject);
 
-        return $object;
+        return $userQueryObject;
     }
 
-    public function selectUsersCount()
+    public function selectUsersCount(): static
     {
         $this->selectField('users_count');
 
         return $this;
     }
 
-    public function selectUuid()
+    public function selectUuid(): static
     {
         $this->selectField('uuid');
 
         return $this;
     }
 
-    public function selectWebhooks(PipeWebhooksArgumentsObject $argsObject = null)
+    public function selectWebhooks(PipeWebhooksArgumentsObject $pipeWebhooksArgumentsObject = null): WebhookQueryObject
     {
-        $object = new WebhookQueryObject('webhooks');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $webhookQueryObject = new WebhookQueryObject('webhooks');
+        if ($pipeWebhooksArgumentsObject !== null) {
+            $webhookQueryObject->appendArguments($pipeWebhooksArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($webhookQueryObject);
 
-        return $object;
+        return $webhookQueryObject;
     }
 }

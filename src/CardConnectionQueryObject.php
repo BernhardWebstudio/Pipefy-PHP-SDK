@@ -4,27 +4,25 @@ namespace GraphQL\SchemaObject;
 
 class CardConnectionQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'CardConnection';
-
-    public function selectEdges(CardConnectionEdgesArgumentsObject $argsObject = null)
+    public function selectEdges(CardConnectionEdgesArgumentsObject $cardConnectionEdgesArgumentsObject = null): CardEdgeQueryObject
     {
-        $object = new CardEdgeQueryObject('edges');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $cardEdgeQueryObject = new CardEdgeQueryObject('edges');
+        if ($cardConnectionEdgesArgumentsObject !== null) {
+            $cardEdgeQueryObject->appendArguments($cardConnectionEdgesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($cardEdgeQueryObject);
 
-        return $object;
+        return $cardEdgeQueryObject;
     }
 
-    public function selectPageInfo(CardConnectionPageInfoArgumentsObject $argsObject = null)
+    public function selectPageInfo(CardConnectionPageInfoArgumentsObject $cardConnectionPageInfoArgumentsObject = null): PageInfoQueryObject
     {
-        $object = new PageInfoQueryObject('pageInfo');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $pageInfoQueryObject = new PageInfoQueryObject('pageInfo');
+        if ($cardConnectionPageInfoArgumentsObject !== null) {
+            $pageInfoQueryObject->appendArguments($cardConnectionPageInfoArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($pageInfoQueryObject);
 
-        return $object;
+        return $pageInfoQueryObject;
     }
 }

@@ -4,30 +4,28 @@ namespace GraphQL\SchemaObject;
 
 class PipeTemplateQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'PipeTemplate';
-
-    public function selectIcon()
+    public function selectIcon(): static
     {
         $this->selectField('icon');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectImage()
+    public function selectImage(): static
     {
         $this->selectField('image');
 
         return $this;
     }
 
-    public function selectName()
+    public function selectName(): static
     {
         $this->selectField('name');
 

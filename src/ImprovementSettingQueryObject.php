@@ -4,34 +4,32 @@ namespace GraphQL\SchemaObject;
 
 class ImprovementSettingQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'ImprovementSetting';
-
-    public function selectDescription()
+    public function selectDescription(): static
     {
         $this->selectField('description');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectImprovements(ImprovementSettingImprovementsArgumentsObject $argsObject = null)
+    public function selectImprovements(ImprovementSettingImprovementsArgumentsObject $improvementSettingImprovementsArgumentsObject = null): ImprovementQueryObject
     {
-        $object = new ImprovementQueryObject('improvements');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $improvementQueryObject = new ImprovementQueryObject('improvements');
+        if ($improvementSettingImprovementsArgumentsObject !== null) {
+            $improvementQueryObject->appendArguments($improvementSettingImprovementsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($improvementQueryObject);
 
-        return $object;
+        return $improvementQueryObject;
     }
 
-    public function selectTitle()
+    public function selectTitle(): static
     {
         $this->selectField('title');
 

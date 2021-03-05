@@ -4,23 +4,21 @@ namespace GraphQL\SchemaObject;
 
 class SummaryGroupQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'SummaryGroup';
-
-    public function selectName()
+    public function selectName(): static
     {
         $this->selectField('name');
 
         return $this;
     }
 
-    public function selectOptions(SummaryGroupOptionsArgumentsObject $argsObject = null)
+    public function selectOptions(SummaryGroupOptionsArgumentsObject $summaryGroupOptionsArgumentsObject = null): SummaryOptionQueryObject
     {
-        $object = new SummaryOptionQueryObject('options');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $summaryOptionQueryObject = new SummaryOptionQueryObject('options');
+        if ($summaryGroupOptionsArgumentsObject !== null) {
+            $summaryOptionQueryObject->appendArguments($summaryGroupOptionsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($summaryOptionQueryObject);
 
-        return $object;
+        return $summaryOptionQueryObject;
     }
 }

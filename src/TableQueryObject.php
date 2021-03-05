@@ -4,242 +4,240 @@ namespace GraphQL\SchemaObject;
 
 class TableQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'Table';
-
-    public function selectAnyoneCanCreateCard()
+    public function selectAnyoneCanCreateCard(): static
     {
         $this->selectField('anyone_can_create_card');
 
         return $this;
     }
 
-    public function selectAuthorization()
+    public function selectAuthorization(): static
     {
         $this->selectField('authorization');
 
         return $this;
     }
 
-    public function selectColor()
+    public function selectColor(): static
     {
         $this->selectField('color');
 
         return $this;
     }
 
-    public function selectConditionExpressionsFieldIds()
+    public function selectConditionExpressionsFieldIds(): static
     {
         $this->selectField('conditionExpressionsFieldIds');
 
         return $this;
     }
 
-    public function selectCreateRecordButtonLabel()
+    public function selectCreateRecordButtonLabel(): static
     {
         $this->selectField('create_record_button_label');
 
         return $this;
     }
 
-    public function selectDescription()
+    public function selectDescription(): static
     {
         $this->selectField('description');
 
         return $this;
     }
 
-    public function selectIcon()
+    public function selectIcon(): static
     {
         $this->selectField('icon');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectLabels(TableLabelsArgumentsObject $argsObject = null)
+    public function selectLabels(TableLabelsArgumentsObject $tableLabelsArgumentsObject = null): LabelQueryObject
     {
-        $object = new LabelQueryObject('labels');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $labelQueryObject = new LabelQueryObject('labels');
+        if ($tableLabelsArgumentsObject !== null) {
+            $labelQueryObject->appendArguments($tableLabelsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($labelQueryObject);
 
-        return $object;
+        return $labelQueryObject;
     }
 
-    public function selectMembers(TableMembersArgumentsObject $argsObject = null)
+    public function selectMembers(TableMembersArgumentsObject $tableMembersArgumentsObject = null): MemberQueryObject
     {
-        $object = new MemberQueryObject('members');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $memberQueryObject = new MemberQueryObject('members');
+        if ($tableMembersArgumentsObject !== null) {
+            $memberQueryObject->appendArguments($tableMembersArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($memberQueryObject);
 
-        return $object;
+        return $memberQueryObject;
     }
 
-    public function selectMyPermissions(TableMyPermissionsArgumentsObject $argsObject = null)
+    public function selectMyPermissions(TableMyPermissionsArgumentsObject $tableMyPermissionsArgumentsObject = null): TablePermissionQueryObject
     {
-        $object = new TablePermissionQueryObject('my_permissions');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $tablePermissionQueryObject = new TablePermissionQueryObject('my_permissions');
+        if ($tableMyPermissionsArgumentsObject !== null) {
+            $tablePermissionQueryObject->appendArguments($tableMyPermissionsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($tablePermissionQueryObject);
 
-        return $object;
+        return $tablePermissionQueryObject;
     }
 
-    public function selectName()
+    public function selectName(): static
     {
         $this->selectField('name');
 
         return $this;
     }
 
-    public function selectOrderableFields()
+    public function selectOrderableFields(): static
     {
         $this->selectField('orderableFields');
 
         return $this;
     }
 
-    public function selectOrderableTypes()
+    public function selectOrderableTypes(): static
     {
         $this->selectField('orderableTypes');
 
         return $this;
     }
 
-    public function selectOrganization(TableOrganizationArgumentsObject $argsObject = null)
+    public function selectOrganization(TableOrganizationArgumentsObject $tableOrganizationArgumentsObject = null): OrganizationQueryObject
     {
-        $object = new OrganizationQueryObject('organization');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $organizationQueryObject = new OrganizationQueryObject('organization');
+        if ($tableOrganizationArgumentsObject !== null) {
+            $organizationQueryObject->appendArguments($tableOrganizationArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($organizationQueryObject);
 
-        return $object;
+        return $organizationQueryObject;
     }
 
-    public function selectPublic()
+    public function selectPublic(): static
     {
         $this->selectField('public');
 
         return $this;
     }
 
-    public function selectPublicFormSettings(TablePublicFormSettingsArgumentsObject $argsObject = null)
+    public function selectPublicFormSettings(TablePublicFormSettingsArgumentsObject $tablePublicFormSettingsArgumentsObject = null): PublicFormSettingsQueryObject
     {
-        $object = new PublicFormSettingsQueryObject('publicFormSettings');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $publicFormSettingsQueryObject = new PublicFormSettingsQueryObject('publicFormSettings');
+        if ($tablePublicFormSettingsArgumentsObject !== null) {
+            $publicFormSettingsQueryObject->appendArguments($tablePublicFormSettingsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($publicFormSettingsQueryObject);
 
-        return $object;
+        return $publicFormSettingsQueryObject;
     }
 
-    public function selectPublicForm()
+    public function selectPublicForm(): static
     {
         $this->selectField('public_form');
 
         return $this;
     }
 
-    public function selectStatuses(TableStatusesArgumentsObject $argsObject = null)
+    public function selectStatuses(TableStatusesArgumentsObject $tableStatusesArgumentsObject = null): TableRecordStatusQueryObject
     {
-        $object = new TableRecordStatusQueryObject('statuses');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $tableRecordStatusQueryObject = new TableRecordStatusQueryObject('statuses');
+        if ($tableStatusesArgumentsObject !== null) {
+            $tableRecordStatusQueryObject->appendArguments($tableStatusesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($tableRecordStatusQueryObject);
 
-        return $object;
+        return $tableRecordStatusQueryObject;
     }
 
-    public function selectSummaryAttributes(TableSummaryAttributesArgumentsObject $argsObject = null)
+    public function selectSummaryAttributes(TableSummaryAttributesArgumentsObject $tableSummaryAttributesArgumentsObject = null): SummaryAttributeQueryObject
     {
-        $object = new SummaryAttributeQueryObject('summary_attributes');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $summaryAttributeQueryObject = new SummaryAttributeQueryObject('summary_attributes');
+        if ($tableSummaryAttributesArgumentsObject !== null) {
+            $summaryAttributeQueryObject->appendArguments($tableSummaryAttributesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($summaryAttributeQueryObject);
 
-        return $object;
+        return $summaryAttributeQueryObject;
     }
 
-    public function selectSummaryOptions(TableSummaryOptionsArgumentsObject $argsObject = null)
+    public function selectSummaryOptions(TableSummaryOptionsArgumentsObject $tableSummaryOptionsArgumentsObject = null): SummaryGroupQueryObject
     {
-        $object = new SummaryGroupQueryObject('summary_options');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $summaryGroupQueryObject = new SummaryGroupQueryObject('summary_options');
+        if ($tableSummaryOptionsArgumentsObject !== null) {
+            $summaryGroupQueryObject->appendArguments($tableSummaryOptionsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($summaryGroupQueryObject);
 
-        return $object;
+        return $summaryGroupQueryObject;
     }
 
-    public function selectTableFields(TableTableFieldsArgumentsObject $argsObject = null)
+    public function selectTableFields(TableTableFieldsArgumentsObject $tableTableFieldsArgumentsObject = null): TableFieldQueryObject
     {
-        $object = new TableFieldQueryObject('table_fields');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $tableFieldQueryObject = new TableFieldQueryObject('table_fields');
+        if ($tableTableFieldsArgumentsObject !== null) {
+            $tableFieldQueryObject->appendArguments($tableTableFieldsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($tableFieldQueryObject);
 
-        return $object;
+        return $tableFieldQueryObject;
     }
 
-    public function selectTableRecords(TableTableRecordsArgumentsObject $argsObject = null)
+    public function selectTableRecords(TableTableRecordsArgumentsObject $tableTableRecordsArgumentsObject = null): TableRecordConnectionQueryObject
     {
-        $object = new TableRecordConnectionQueryObject('table_records');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $tableRecordConnectionQueryObject = new TableRecordConnectionQueryObject('table_records');
+        if ($tableTableRecordsArgumentsObject !== null) {
+            $tableRecordConnectionQueryObject->appendArguments($tableTableRecordsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($tableRecordConnectionQueryObject);
 
-        return $object;
+        return $tableRecordConnectionQueryObject;
     }
 
-    public function selectTableRecordsCount()
+    public function selectTableRecordsCount(): static
     {
         $this->selectField('table_records_count');
 
         return $this;
     }
 
-    public function selectTitleField(TableTitleFieldArgumentsObject $argsObject = null)
+    public function selectTitleField(TableTitleFieldArgumentsObject $tableTitleFieldArgumentsObject = null): TableFieldQueryObject
     {
-        $object = new TableFieldQueryObject('title_field');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $tableFieldQueryObject = new TableFieldQueryObject('title_field');
+        if ($tableTitleFieldArgumentsObject !== null) {
+            $tableFieldQueryObject->appendArguments($tableTitleFieldArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($tableFieldQueryObject);
 
-        return $object;
+        return $tableFieldQueryObject;
     }
 
-    public function selectUrl()
+    public function selectUrl(): static
     {
         $this->selectField('url');
 
         return $this;
     }
 
-    public function selectUsersCount()
+    public function selectUsersCount(): static
     {
         $this->selectField('users_count');
 
         return $this;
     }
 
-    public function selectUuid()
+    public function selectUuid(): static
     {
         $this->selectField('uuid');
 

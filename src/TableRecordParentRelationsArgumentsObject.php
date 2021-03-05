@@ -6,7 +6,7 @@ class TableRecordParentRelationsArgumentsObject extends ArgumentsObject
 {
     protected $relation_name;
 
-    public function setRelationName($relationName)
+    public function setRelationName($relationName): static
     {
         $this->relation_name = $relationName;
 

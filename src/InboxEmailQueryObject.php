@@ -4,189 +4,187 @@ namespace GraphQL\SchemaObject;
 
 class InboxEmailQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'InboxEmail';
-
-    public function selectAttachments(InboxEmailAttachmentsArgumentsObject $argsObject = null)
+    public function selectAttachments(InboxEmailAttachmentsArgumentsObject $inboxEmailAttachmentsArgumentsObject = null): EmailAttachmentQueryObject
     {
-        $object = new EmailAttachmentQueryObject('attachments');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $emailAttachmentQueryObject = new EmailAttachmentQueryObject('attachments');
+        if ($inboxEmailAttachmentsArgumentsObject !== null) {
+            $emailAttachmentQueryObject->appendArguments($inboxEmailAttachmentsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($emailAttachmentQueryObject);
 
-        return $object;
+        return $emailAttachmentQueryObject;
     }
 
-    public function selectBcc()
+    public function selectBcc(): static
     {
         $this->selectField('bcc');
 
         return $this;
     }
 
-    public function selectBody()
+    public function selectBody(): static
     {
         $this->selectField('body');
 
         return $this;
     }
 
-    public function selectCard(InboxEmailCardArgumentsObject $argsObject = null)
+    public function selectCard(InboxEmailCardArgumentsObject $inboxEmailCardArgumentsObject = null): CardQueryObject
     {
-        $object = new CardQueryObject('card');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $cardQueryObject = new CardQueryObject('card');
+        if ($inboxEmailCardArgumentsObject !== null) {
+            $cardQueryObject->appendArguments($inboxEmailCardArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($cardQueryObject);
 
-        return $object;
+        return $cardQueryObject;
     }
 
-    public function selectCc()
+    public function selectCc(): static
     {
         $this->selectField('cc');
 
         return $this;
     }
 
-    public function selectCleanBody()
+    public function selectCleanBody(): static
     {
         $this->selectField('clean_body');
 
         return $this;
     }
 
-    public function selectCleanHtml()
+    public function selectCleanHtml(): static
     {
         $this->selectField('clean_html');
 
         return $this;
     }
 
-    public function selectCleanText()
+    public function selectCleanText(): static
     {
         $this->selectField('clean_text');
 
         return $this;
     }
 
-    public function selectFrom()
+    public function selectFrom(): static
     {
         $this->selectField('from');
 
         return $this;
     }
 
-    public function selectFromName()
+    public function selectFromName(): static
     {
         $this->selectField('fromName');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectMainTo()
+    public function selectMainTo(): static
     {
         $this->selectField('main_to');
 
         return $this;
     }
 
-    public function selectMessageId()
+    public function selectMessageId(): static
     {
         $this->selectField('message_id');
 
         return $this;
     }
 
-    public function selectPipe(InboxEmailPipeArgumentsObject $argsObject = null)
+    public function selectPipe(InboxEmailPipeArgumentsObject $inboxEmailPipeArgumentsObject = null): PipeQueryObject
     {
-        $object = new PipeQueryObject('pipe');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $pipeQueryObject = new PipeQueryObject('pipe');
+        if ($inboxEmailPipeArgumentsObject !== null) {
+            $pipeQueryObject->appendArguments($inboxEmailPipeArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($pipeQueryObject);
 
-        return $object;
+        return $pipeQueryObject;
     }
 
-    public function selectRawBody()
+    public function selectRawBody(): static
     {
         $this->selectField('raw_body');
 
         return $this;
     }
 
-    public function selectRawHeaders()
+    public function selectRawHeaders(): static
     {
         $this->selectField('raw_headers');
 
         return $this;
     }
 
-    public function selectRawHtml()
+    public function selectRawHtml(): static
     {
         $this->selectField('raw_html');
 
         return $this;
     }
 
-    public function selectRawText()
+    public function selectRawText(): static
     {
         $this->selectField('raw_text');
 
         return $this;
     }
 
-    public function selectSentViaAutomation()
+    public function selectSentViaAutomation(): static
     {
         $this->selectField('sent_via_automation');
 
         return $this;
     }
 
-    public function selectState()
+    public function selectState(): static
     {
         $this->selectField('state');
 
         return $this;
     }
 
-    public function selectSubject()
+    public function selectSubject(): static
     {
         $this->selectField('subject');
 
         return $this;
     }
 
-    public function selectTo()
+    public function selectTo(): static
     {
         $this->selectField('to');
 
         return $this;
     }
 
-    public function selectUpdatedAt()
+    public function selectUpdatedAt(): static
     {
         $this->selectField('updated_at');
 
         return $this;
     }
 
-    public function selectUser(InboxEmailUserArgumentsObject $argsObject = null)
+    public function selectUser(InboxEmailUserArgumentsObject $inboxEmailUserArgumentsObject = null): UserQueryObject
     {
-        $object = new UserQueryObject('user');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $userQueryObject = new UserQueryObject('user');
+        if ($inboxEmailUserArgumentsObject !== null) {
+            $userQueryObject->appendArguments($inboxEmailUserArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($userQueryObject);
 
-        return $object;
+        return $userQueryObject;
     }
 }

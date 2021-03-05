@@ -4,116 +4,114 @@ namespace GraphQL\SchemaObject;
 
 class CardFieldQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'CardField';
-
-    public function selectArrayValue()
+    public function selectArrayValue(): static
     {
         $this->selectField('array_value');
 
         return $this;
     }
 
-    public function selectAssigneeValues(CardFieldAssigneeValuesArgumentsObject $argsObject = null)
+    public function selectAssigneeValues(CardFieldAssigneeValuesArgumentsObject $cardFieldAssigneeValuesArgumentsObject = null): UserQueryObject
     {
-        $object = new UserQueryObject('assignee_values');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $userQueryObject = new UserQueryObject('assignee_values');
+        if ($cardFieldAssigneeValuesArgumentsObject !== null) {
+            $userQueryObject->appendArguments($cardFieldAssigneeValuesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($userQueryObject);
 
-        return $object;
+        return $userQueryObject;
     }
 
-    public function selectDateValue()
+    public function selectDateValue(): static
     {
         $this->selectField('date_value');
 
         return $this;
     }
 
-    public function selectDatetimeValue()
+    public function selectDatetimeValue(): static
     {
         $this->selectField('datetime_value');
 
         return $this;
     }
 
-    public function selectMinimalField(CardFieldFieldArgumentsObject $argsObject = null)
+    public function selectMinimalField(CardFieldFieldArgumentsObject $cardFieldFieldArgumentsObject = null): MinimalFieldQueryObject
     {
-        $object = new MinimalFieldQueryObject('field');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $minimalFieldQueryObject = new MinimalFieldQueryObject('field');
+        if ($cardFieldFieldArgumentsObject !== null) {
+            $minimalFieldQueryObject->appendArguments($cardFieldFieldArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($minimalFieldQueryObject);
 
-        return $object;
+        return $minimalFieldQueryObject;
     }
 
-    public function selectFilledAt()
+    public function selectFilledAt(): static
     {
         $this->selectField('filled_at');
 
         return $this;
     }
 
-    public function selectFloatValue()
+    public function selectFloatValue(): static
     {
         $this->selectField('float_value');
 
         return $this;
     }
 
-    public function selectIndexName()
+    public function selectIndexName(): static
     {
         $this->selectField('indexName');
 
         return $this;
     }
 
-    public function selectLabelValues(CardFieldLabelValuesArgumentsObject $argsObject = null)
+    public function selectLabelValues(CardFieldLabelValuesArgumentsObject $cardFieldLabelValuesArgumentsObject = null): FieldLabelQueryObject
     {
-        $object = new FieldLabelQueryObject('label_values');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $fieldLabelQueryObject = new FieldLabelQueryObject('label_values');
+        if ($cardFieldLabelValuesArgumentsObject !== null) {
+            $fieldLabelQueryObject->appendArguments($cardFieldLabelValuesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($fieldLabelQueryObject);
 
-        return $object;
+        return $fieldLabelQueryObject;
     }
 
-    public function selectName()
+    public function selectName(): static
     {
         $this->selectField('name');
 
         return $this;
     }
 
-    public function selectPhaseField(CardFieldPhaseFieldArgumentsObject $argsObject = null)
+    public function selectPhaseField(CardFieldPhaseFieldArgumentsObject $cardFieldPhaseFieldArgumentsObject = null): PhaseFieldQueryObject
     {
-        $object = new PhaseFieldQueryObject('phase_field');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseFieldQueryObject = new PhaseFieldQueryObject('phase_field');
+        if ($cardFieldPhaseFieldArgumentsObject !== null) {
+            $phaseFieldQueryObject->appendArguments($cardFieldPhaseFieldArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseFieldQueryObject);
 
-        return $object;
+        return $phaseFieldQueryObject;
     }
 
-    public function selectReportValue()
+    public function selectReportValue(): static
     {
         $this->selectField('report_value');
 
         return $this;
     }
 
-    public function selectUpdatedAt()
+    public function selectUpdatedAt(): static
     {
         $this->selectField('updated_at');
 
         return $this;
     }
 
-    public function selectValue()
+    public function selectValue(): static
     {
         $this->selectField('value');
 

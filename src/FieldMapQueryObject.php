@@ -4,23 +4,21 @@ namespace GraphQL\SchemaObject;
 
 class FieldMapQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'FieldMap';
-
-    public function selectFieldId()
+    public function selectFieldId(): static
     {
         $this->selectField('fieldId');
 
         return $this;
     }
 
-    public function selectInputMode()
+    public function selectInputMode(): static
     {
         $this->selectField('inputMode');
 
         return $this;
     }
 
-    public function selectValue()
+    public function selectValue(): static
     {
         $this->selectField('value');
 

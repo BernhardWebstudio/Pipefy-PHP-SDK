@@ -4,16 +4,14 @@ namespace GraphQL\SchemaObject;
 
 class ConditionalFieldQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'ConditionalField';
-
-    public function selectFieldsToHide(ConditionalFieldFieldsToHideArgumentsObject $argsObject = null)
+    public function selectFieldsToHide(ConditionalFieldFieldsToHideArgumentsObject $conditionalFieldFieldsToHideArgumentsObject = null): PhaseFieldQueryObject
     {
-        $object = new PhaseFieldQueryObject('fieldsToHide');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseFieldQueryObject = new PhaseFieldQueryObject('fieldsToHide');
+        if ($conditionalFieldFieldsToHideArgumentsObject !== null) {
+            $phaseFieldQueryObject->appendArguments($conditionalFieldFieldsToHideArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseFieldQueryObject);
 
-        return $object;
+        return $phaseFieldQueryObject;
     }
 }

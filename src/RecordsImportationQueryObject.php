@@ -4,48 +4,46 @@ namespace GraphQL\SchemaObject;
 
 class RecordsImportationQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'RecordsImportation';
-
-    public function selectCreatedAt()
+    public function selectCreatedAt(): static
     {
         $this->selectField('createdAt');
 
         return $this;
     }
 
-    public function selectCreatedBy(RecordsImportationCreatedByArgumentsObject $argsObject = null)
+    public function selectCreatedBy(RecordsImportationCreatedByArgumentsObject $recordsImportationCreatedByArgumentsObject = null): UserQueryObject
     {
-        $object = new UserQueryObject('createdBy');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $userQueryObject = new UserQueryObject('createdBy');
+        if ($recordsImportationCreatedByArgumentsObject !== null) {
+            $userQueryObject->appendArguments($recordsImportationCreatedByArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($userQueryObject);
 
-        return $object;
+        return $userQueryObject;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectImportedRecords()
+    public function selectImportedRecords(): static
     {
         $this->selectField('importedRecords');
 
         return $this;
     }
 
-    public function selectStatus()
+    public function selectStatus(): static
     {
         $this->selectField('status');
 
         return $this;
     }
 
-    public function selectUrl()
+    public function selectUrl(): static
     {
         $this->selectField('url');
 

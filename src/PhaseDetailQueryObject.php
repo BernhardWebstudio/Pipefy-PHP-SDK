@@ -4,65 +4,63 @@ namespace GraphQL\SchemaObject;
 
 class PhaseDetailQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'PhaseDetail';
-
-    public function selectBecameLate()
+    public function selectBecameLate(): static
     {
         $this->selectField('became_late');
 
         return $this;
     }
 
-    public function selectCreatedAt()
+    public function selectCreatedAt(): static
     {
         $this->selectField('created_at');
 
         return $this;
     }
 
-    public function selectDraft()
+    public function selectDraft(): static
     {
         $this->selectField('draft');
 
         return $this;
     }
 
-    public function selectDuration()
+    public function selectDuration(): static
     {
         $this->selectField('duration');
 
         return $this;
     }
 
-    public function selectFirstTimeIn()
+    public function selectFirstTimeIn(): static
     {
         $this->selectField('firstTimeIn');
 
         return $this;
     }
 
-    public function selectLastTimeIn()
+    public function selectLastTimeIn(): static
     {
         $this->selectField('lastTimeIn');
 
         return $this;
     }
 
-    public function selectLastTimeOut()
+    public function selectLastTimeOut(): static
     {
         $this->selectField('lastTimeOut');
 
         return $this;
     }
 
-    public function selectPhase(PhaseDetailPhaseArgumentsObject $argsObject = null)
+    public function selectPhase(PhaseDetailPhaseArgumentsObject $phaseDetailPhaseArgumentsObject = null): PhaseQueryObject
     {
-        $object = new PhaseQueryObject('phase');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseQueryObject = new PhaseQueryObject('phase');
+        if ($phaseDetailPhaseArgumentsObject !== null) {
+            $phaseQueryObject->appendArguments($phaseDetailPhaseArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseQueryObject);
 
-        return $object;
+        return $phaseQueryObject;
     }
 }

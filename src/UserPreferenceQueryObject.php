@@ -4,51 +4,49 @@ namespace GraphQL\SchemaObject;
 
 class UserPreferenceQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'UserPreference';
-
-    public function selectBrowserNativeNotificationEnabled()
+    public function selectBrowserNativeNotificationEnabled(): static
     {
         $this->selectField('browserNativeNotificationEnabled');
 
         return $this;
     }
 
-    public function selectDisplayImprovements()
+    public function selectDisplayImprovements(): static
     {
         $this->selectField('displayImprovements');
 
         return $this;
     }
 
-    public function selectDisplayOrganizationReportSidebar()
+    public function selectDisplayOrganizationReportSidebar(): static
     {
         $this->selectField('displayOrganizationReportSidebar');
 
         return $this;
     }
 
-    public function selectDisplayPipeReportsSidebar()
+    public function selectDisplayPipeReportsSidebar(): static
     {
         $this->selectField('displayPipeReportsSidebar');
 
         return $this;
     }
 
-    public function selectFavoritePipeIds()
+    public function selectFavoritePipeIds(): static
     {
         $this->selectField('favoritePipeIds');
 
         return $this;
     }
 
-    public function selectSuggestedTemplatesClosed()
+    public function selectSuggestedTemplatesClosed(): static
     {
         $this->selectField('suggestedTemplatesClosed');
 
         return $this;
     }
 
-    public function selectUseNewOpenCard()
+    public function selectUseNewOpenCard(): static
     {
         $this->selectField('useNewOpenCard');
 

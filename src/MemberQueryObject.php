@@ -4,23 +4,21 @@ namespace GraphQL\SchemaObject;
 
 class MemberQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'Member';
-
-    public function selectRoleName()
+    public function selectRoleName(): static
     {
         $this->selectField('role_name');
 
         return $this;
     }
 
-    public function selectUser(MemberUserArgumentsObject $argsObject = null)
+    public function selectUser(MemberUserArgumentsObject $memberUserArgumentsObject = null): UserQueryObject
     {
-        $object = new UserQueryObject('user');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $userQueryObject = new UserQueryObject('user');
+        if ($memberUserArgumentsObject !== null) {
+            $userQueryObject->appendArguments($memberUserArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($userQueryObject);
 
-        return $object;
+        return $userQueryObject;
     }
 }

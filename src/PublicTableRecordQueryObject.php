@@ -4,34 +4,32 @@ namespace GraphQL\SchemaObject;
 
 class PublicTableRecordQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'PublicTableRecord';
-
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectPath()
+    public function selectPath(): static
     {
         $this->selectField('path');
 
         return $this;
     }
 
-    public function selectSummary(PublicTableRecordSummaryArgumentsObject $argsObject = null)
+    public function selectSummary(PublicTableRecordSummaryArgumentsObject $publicTableRecordSummaryArgumentsObject = null): SummaryQueryObject
     {
-        $object = new SummaryQueryObject('summary');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $summaryQueryObject = new SummaryQueryObject('summary');
+        if ($publicTableRecordSummaryArgumentsObject !== null) {
+            $summaryQueryObject->appendArguments($publicTableRecordSummaryArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($summaryQueryObject);
 
-        return $object;
+        return $summaryQueryObject;
     }
 
-    public function selectTitle()
+    public function selectTitle(): static
     {
         $this->selectField('title');
 

@@ -4,116 +4,114 @@ namespace GraphQL\SchemaObject;
 
 class PhaseQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'Phase';
-
-    public function selectCards(PhaseCardsArgumentsObject $argsObject = null)
+    public function selectCards(PhaseCardsArgumentsObject $phaseCardsArgumentsObject = null): CardConnectionQueryObject
     {
-        $object = new CardConnectionQueryObject('cards');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $cardConnectionQueryObject = new CardConnectionQueryObject('cards');
+        if ($phaseCardsArgumentsObject !== null) {
+            $cardConnectionQueryObject->appendArguments($phaseCardsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($cardConnectionQueryObject);
 
-        return $object;
+        return $cardConnectionQueryObject;
     }
 
-    public function selectCardsCanBeMovedToPhases(PhaseCardsCanBeMovedToPhasesArgumentsObject $argsObject = null)
+    public function selectCardsCanBeMovedToPhases(PhaseCardsCanBeMovedToPhasesArgumentsObject $phaseCardsCanBeMovedToPhasesArgumentsObject = null): \GraphQL\SchemaObject\PhaseQueryObject
     {
-        $object = new self('cards_can_be_moved_to_phases');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $self = new self('cards_can_be_moved_to_phases');
+        if ($phaseCardsCanBeMovedToPhasesArgumentsObject !== null) {
+            $self->appendArguments($phaseCardsCanBeMovedToPhasesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($self);
 
-        return $object;
+        return $self;
     }
 
-    public function selectCardsCount()
+    public function selectCardsCount(): static
     {
         $this->selectField('cards_count');
 
         return $this;
     }
 
-    public function selectColor()
+    public function selectColor(): static
     {
         $this->selectField('color');
 
         return $this;
     }
 
-    public function selectCreatedAt()
+    public function selectCreatedAt(): static
     {
         $this->selectField('created_at');
 
         return $this;
     }
 
-    public function selectDescription()
+    public function selectDescription(): static
     {
         $this->selectField('description');
 
         return $this;
     }
 
-    public function selectDone()
+    public function selectDone(): static
     {
         $this->selectField('done');
 
         return $this;
     }
 
-    public function selectExpiredCardsCount()
+    public function selectExpiredCardsCount(): static
     {
         $this->selectField('expiredCardsCount');
 
         return $this;
     }
 
-    public function selectFieldConditions(PhaseFieldConditionsArgumentsObject $argsObject = null)
+    public function selectFieldConditions(PhaseFieldConditionsArgumentsObject $phaseFieldConditionsArgumentsObject = null): FieldConditionQueryObject
     {
-        $object = new FieldConditionQueryObject('fieldConditions');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $fieldConditionQueryObject = new FieldConditionQueryObject('fieldConditions');
+        if ($phaseFieldConditionsArgumentsObject !== null) {
+            $fieldConditionQueryObject->appendArguments($phaseFieldConditionsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($fieldConditionQueryObject);
 
-        return $object;
+        return $fieldConditionQueryObject;
     }
 
-    public function selectFields(PhaseFieldsArgumentsObject $argsObject = null)
+    public function selectFields(PhaseFieldsArgumentsObject $phaseFieldsArgumentsObject = null): PhaseFieldQueryObject
     {
-        $object = new PhaseFieldQueryObject('fields');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseFieldQueryObject = new PhaseFieldQueryObject('fields');
+        if ($phaseFieldsArgumentsObject !== null) {
+            $phaseFieldQueryObject->appendArguments($phaseFieldsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseFieldQueryObject);
 
-        return $object;
+        return $phaseFieldQueryObject;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectLateCardsCount()
+    public function selectLateCardsCount(): static
     {
         $this->selectField('lateCardsCount');
 
         return $this;
     }
 
-    public function selectName()
+    public function selectName(): static
     {
         $this->selectField('name');
 
         return $this;
     }
 
-    public function selectSequentialId()
+    public function selectSequentialId(): static
     {
         $this->selectField('sequentialId');
 

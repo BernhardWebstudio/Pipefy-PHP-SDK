@@ -4,365 +4,363 @@ namespace GraphQL\SchemaObject;
 
 class CardQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'Card';
-
-    public function selectAge()
+    public function selectAge(): static
     {
         $this->selectField('age');
 
         return $this;
     }
 
-    public function selectAssignees(CardAssigneesArgumentsObject $argsObject = null)
+    public function selectAssignees(CardAssigneesArgumentsObject $cardAssigneesArgumentsObject = null): UserQueryObject
     {
-        $object = new UserQueryObject('assignees');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $userQueryObject = new UserQueryObject('assignees');
+        if ($cardAssigneesArgumentsObject !== null) {
+            $userQueryObject->appendArguments($cardAssigneesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($userQueryObject);
 
-        return $object;
+        return $userQueryObject;
     }
 
-    public function selectAttachments(CardAttachmentsArgumentsObject $argsObject = null)
+    public function selectAttachments(CardAttachmentsArgumentsObject $cardAttachmentsArgumentsObject = null): AttachmentQueryObject
     {
-        $object = new AttachmentQueryObject('attachments');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $attachmentQueryObject = new AttachmentQueryObject('attachments');
+        if ($cardAttachmentsArgumentsObject !== null) {
+            $attachmentQueryObject->appendArguments($cardAttachmentsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($attachmentQueryObject);
 
-        return $object;
+        return $attachmentQueryObject;
     }
 
-    public function selectAttachmentsCount()
+    public function selectAttachmentsCount(): static
     {
         $this->selectField('attachments_count');
 
         return $this;
     }
 
-    public function selectCardAssignees(CardCardAssigneesArgumentsObject $argsObject = null)
+    public function selectCardAssignees(CardCardAssigneesArgumentsObject $cardCardAssigneesArgumentsObject = null): CardAssigneeQueryObject
     {
-        $object = new CardAssigneeQueryObject('cardAssignees');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $cardAssigneeQueryObject = new CardAssigneeQueryObject('cardAssignees');
+        if ($cardCardAssigneesArgumentsObject !== null) {
+            $cardAssigneeQueryObject->appendArguments($cardCardAssigneesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($cardAssigneeQueryObject);
 
-        return $object;
+        return $cardAssigneeQueryObject;
     }
 
-    public function selectChecklistItemsCheckedCount()
+    public function selectChecklistItemsCheckedCount(): static
     {
         $this->selectField('checklist_items_checked_count');
 
         return $this;
     }
 
-    public function selectChecklistItemsCount()
+    public function selectChecklistItemsCount(): static
     {
         $this->selectField('checklist_items_count');
 
         return $this;
     }
 
-    public function selectChildRelations(CardChildRelationsArgumentsObject $argsObject = null)
+    public function selectChildRelations(CardChildRelationsArgumentsObject $cardChildRelationsArgumentsObject = null): CardRelationshipQueryObject
     {
-        $object = new CardRelationshipQueryObject('child_relations');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $cardRelationshipQueryObject = new CardRelationshipQueryObject('child_relations');
+        if ($cardChildRelationsArgumentsObject !== null) {
+            $cardRelationshipQueryObject->appendArguments($cardChildRelationsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($cardRelationshipQueryObject);
 
-        return $object;
+        return $cardRelationshipQueryObject;
     }
 
-    public function selectComments(CardCommentsArgumentsObject $argsObject = null)
+    public function selectComments(CardCommentsArgumentsObject $cardCommentsArgumentsObject = null): CommentQueryObject
     {
-        $object = new CommentQueryObject('comments');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $commentQueryObject = new CommentQueryObject('comments');
+        if ($cardCommentsArgumentsObject !== null) {
+            $commentQueryObject->appendArguments($cardCommentsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($commentQueryObject);
 
-        return $object;
+        return $commentQueryObject;
     }
 
-    public function selectCommentsCount()
+    public function selectCommentsCount(): static
     {
         $this->selectField('comments_count');
 
         return $this;
     }
 
-    public function selectCreatedAt()
+    public function selectCreatedAt(): static
     {
         $this->selectField('createdAt');
 
         return $this;
     }
 
-    public function selectCreatedBy(CardCreatedByArgumentsObject $argsObject = null)
+    public function selectCreatedBy(CardCreatedByArgumentsObject $cardCreatedByArgumentsObject = null): UserQueryObject
     {
-        $object = new UserQueryObject('createdBy');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $userQueryObject = new UserQueryObject('createdBy');
+        if ($cardCreatedByArgumentsObject !== null) {
+            $userQueryObject->appendArguments($cardCreatedByArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($userQueryObject);
 
-        return $object;
+        return $userQueryObject;
     }
 
-    public function selectCreatorEmail()
+    public function selectCreatorEmail(): static
     {
         $this->selectField('creatorEmail');
 
         return $this;
     }
 
-    public function selectCurrentLateness(CardCurrentLatenessArgumentsObject $argsObject = null)
+    public function selectCurrentLateness(CardCurrentLatenessArgumentsObject $cardCurrentLatenessArgumentsObject = null): cardLatenessQueryObject
     {
-        $object = new cardLatenessQueryObject('currentLateness');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $cardLatenessQueryObject = new cardLatenessQueryObject('currentLateness');
+        if ($cardCurrentLatenessArgumentsObject !== null) {
+            $cardLatenessQueryObject->appendArguments($cardCurrentLatenessArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($cardLatenessQueryObject);
 
-        return $object;
+        return $cardLatenessQueryObject;
     }
 
-    public function selectCurrentPhase(CardCurrentPhaseArgumentsObject $argsObject = null)
+    public function selectCurrentPhase(CardCurrentPhaseArgumentsObject $cardCurrentPhaseArgumentsObject = null): PhaseQueryObject
     {
-        $object = new PhaseQueryObject('current_phase');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseQueryObject = new PhaseQueryObject('current_phase');
+        if ($cardCurrentPhaseArgumentsObject !== null) {
+            $phaseQueryObject->appendArguments($cardCurrentPhaseArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseQueryObject);
 
-        return $object;
+        return $phaseQueryObject;
     }
 
-    public function selectCurrentPhaseAge()
+    public function selectCurrentPhaseAge(): static
     {
         $this->selectField('current_phase_age');
 
         return $this;
     }
 
-    public function selectDone()
+    public function selectDone(): static
     {
         $this->selectField('done');
 
         return $this;
     }
 
-    public function selectDueDate()
+    public function selectDueDate(): static
     {
         $this->selectField('due_date');
 
         return $this;
     }
 
-    public function selectEmailMessagingAddress()
+    public function selectEmailMessagingAddress(): static
     {
         $this->selectField('emailMessagingAddress');
 
         return $this;
     }
 
-    public function selectExpiration(CardExpirationArgumentsObject $argsObject = null)
+    public function selectExpiration(CardExpirationArgumentsObject $cardExpirationArgumentsObject = null): CardExpirationQueryObject
     {
-        $object = new CardExpirationQueryObject('expiration');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $cardExpirationQueryObject = new CardExpirationQueryObject('expiration');
+        if ($cardExpirationArgumentsObject !== null) {
+            $cardExpirationQueryObject->appendArguments($cardExpirationArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($cardExpirationQueryObject);
 
-        return $object;
+        return $cardExpirationQueryObject;
     }
 
-    public function selectExpired()
+    public function selectExpired(): static
     {
         $this->selectField('expired');
 
         return $this;
     }
 
-    public function selectFields(CardFieldsArgumentsObject $argsObject = null)
+    public function selectFields(CardFieldsArgumentsObject $cardFieldsArgumentsObject = null): CardFieldQueryObject
     {
-        $object = new CardFieldQueryObject('fields');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $cardFieldQueryObject = new CardFieldQueryObject('fields');
+        if ($cardFieldsArgumentsObject !== null) {
+            $cardFieldQueryObject->appendArguments($cardFieldsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($cardFieldQueryObject);
 
-        return $object;
+        return $cardFieldQueryObject;
     }
 
-    public function selectFinishedAt()
+    public function selectFinishedAt(): static
     {
         $this->selectField('finished_at');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectInboxEmails(CardInboxEmailsArgumentsObject $argsObject = null)
+    public function selectInboxEmails(CardInboxEmailsArgumentsObject $cardInboxEmailsArgumentsObject = null): InboxEmailQueryObject
     {
-        $object = new InboxEmailQueryObject('inbox_emails');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $inboxEmailQueryObject = new InboxEmailQueryObject('inbox_emails');
+        if ($cardInboxEmailsArgumentsObject !== null) {
+            $inboxEmailQueryObject->appendArguments($cardInboxEmailsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($inboxEmailQueryObject);
 
-        return $object;
+        return $inboxEmailQueryObject;
     }
 
-    public function selectLabels(CardLabelsArgumentsObject $argsObject = null)
+    public function selectLabels(CardLabelsArgumentsObject $cardLabelsArgumentsObject = null): LabelQueryObject
     {
-        $object = new LabelQueryObject('labels');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $labelQueryObject = new LabelQueryObject('labels');
+        if ($cardLabelsArgumentsObject !== null) {
+            $labelQueryObject->appendArguments($cardLabelsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($labelQueryObject);
 
-        return $object;
+        return $labelQueryObject;
     }
 
-    public function selectLate()
+    public function selectLate(): static
     {
         $this->selectField('late');
 
         return $this;
     }
 
-    public function selectParentRelations(CardParentRelationsArgumentsObject $argsObject = null)
+    public function selectParentRelations(CardParentRelationsArgumentsObject $cardParentRelationsArgumentsObject = null): CardRelationshipQueryObject
     {
-        $object = new CardRelationshipQueryObject('parent_relations');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $cardRelationshipQueryObject = new CardRelationshipQueryObject('parent_relations');
+        if ($cardParentRelationsArgumentsObject !== null) {
+            $cardRelationshipQueryObject->appendArguments($cardParentRelationsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($cardRelationshipQueryObject);
 
-        return $object;
+        return $cardRelationshipQueryObject;
     }
 
-    public function selectPath()
+    public function selectPath(): static
     {
         $this->selectField('path');
 
         return $this;
     }
 
-    public function selectPhasesHistory(CardPhasesHistoryArgumentsObject $argsObject = null)
+    public function selectPhasesHistory(CardPhasesHistoryArgumentsObject $cardPhasesHistoryArgumentsObject = null): PhaseDetailQueryObject
     {
-        $object = new PhaseDetailQueryObject('phases_history');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseDetailQueryObject = new PhaseDetailQueryObject('phases_history');
+        if ($cardPhasesHistoryArgumentsObject !== null) {
+            $phaseDetailQueryObject->appendArguments($cardPhasesHistoryArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseDetailQueryObject);
 
-        return $object;
+        return $phaseDetailQueryObject;
     }
 
-    public function selectPipe(CardPipeArgumentsObject $argsObject = null)
+    public function selectPipe(CardPipeArgumentsObject $cardPipeArgumentsObject = null): PipeQueryObject
     {
-        $object = new PipeQueryObject('pipe');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $pipeQueryObject = new PipeQueryObject('pipe');
+        if ($cardPipeArgumentsObject !== null) {
+            $pipeQueryObject->appendArguments($cardPipeArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($pipeQueryObject);
 
-        return $object;
+        return $pipeQueryObject;
     }
 
-    public function selectStartedCurrentPhaseAt()
+    public function selectStartedCurrentPhaseAt(): static
     {
         $this->selectField('started_current_phase_at');
 
         return $this;
     }
 
-    public function selectSubtitles(CardSubtitlesArgumentsObject $argsObject = null)
+    public function selectSubtitles(CardSubtitlesArgumentsObject $cardSubtitlesArgumentsObject = null): CardFieldQueryObject
     {
-        $object = new CardFieldQueryObject('subtitles');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $cardFieldQueryObject = new CardFieldQueryObject('subtitles');
+        if ($cardSubtitlesArgumentsObject !== null) {
+            $cardFieldQueryObject->appendArguments($cardSubtitlesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($cardFieldQueryObject);
 
-        return $object;
+        return $cardFieldQueryObject;
     }
 
-    public function selectSuid()
+    public function selectSuid(): static
     {
         $this->selectField('suid');
 
         return $this;
     }
 
-    public function selectSummary(CardSummaryArgumentsObject $argsObject = null)
+    public function selectSummary(CardSummaryArgumentsObject $cardSummaryArgumentsObject = null): SummaryQueryObject
     {
-        $object = new SummaryQueryObject('summary');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $summaryQueryObject = new SummaryQueryObject('summary');
+        if ($cardSummaryArgumentsObject !== null) {
+            $summaryQueryObject->appendArguments($cardSummaryArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($summaryQueryObject);
 
-        return $object;
+        return $summaryQueryObject;
     }
 
-    public function selectSummaryAttributes(CardSummaryAttributesArgumentsObject $argsObject = null)
+    public function selectSummaryAttributes(CardSummaryAttributesArgumentsObject $cardSummaryAttributesArgumentsObject = null): SummaryQueryObject
     {
-        $object = new SummaryQueryObject('summary_attributes');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $summaryQueryObject = new SummaryQueryObject('summary_attributes');
+        if ($cardSummaryAttributesArgumentsObject !== null) {
+            $summaryQueryObject->appendArguments($cardSummaryAttributesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($summaryQueryObject);
 
-        return $object;
+        return $summaryQueryObject;
     }
 
-    public function selectSummaryFields(CardSummaryFieldsArgumentsObject $argsObject = null)
+    public function selectSummaryFields(CardSummaryFieldsArgumentsObject $cardSummaryFieldsArgumentsObject = null): SummaryQueryObject
     {
-        $object = new SummaryQueryObject('summary_fields');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $summaryQueryObject = new SummaryQueryObject('summary_fields');
+        if ($cardSummaryFieldsArgumentsObject !== null) {
+            $summaryQueryObject->appendArguments($cardSummaryFieldsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($summaryQueryObject);
 
-        return $object;
+        return $summaryQueryObject;
     }
 
-    public function selectTitle()
+    public function selectTitle(): static
     {
         $this->selectField('title');
 
         return $this;
     }
 
-    public function selectUpdatedAt()
+    public function selectUpdatedAt(): static
     {
         $this->selectField('updated_at');
 
         return $this;
     }
 
-    public function selectUrl()
+    public function selectUrl(): static
     {
         $this->selectField('url');
 
         return $this;
     }
 
-    public function selectUuid()
+    public function selectUuid(): static
     {
         $this->selectField('uuid');
 

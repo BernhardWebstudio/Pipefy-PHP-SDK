@@ -4,23 +4,21 @@ namespace GraphQL\SchemaObject;
 
 class PhaseFieldEdgeQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'PhaseFieldEdge';
-
-    public function selectCursor()
+    public function selectCursor(): static
     {
         $this->selectField('cursor');
 
         return $this;
     }
 
-    public function selectNode(PhaseFieldEdgeNodeArgumentsObject $argsObject = null)
+    public function selectNode(PhaseFieldEdgeNodeArgumentsObject $phaseFieldEdgeNodeArgumentsObject = null): PhaseFieldQueryObject
     {
-        $object = new PhaseFieldQueryObject('node');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseFieldQueryObject = new PhaseFieldQueryObject('node');
+        if ($phaseFieldEdgeNodeArgumentsObject !== null) {
+            $phaseFieldQueryObject->appendArguments($phaseFieldEdgeNodeArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseFieldQueryObject);
 
-        return $object;
+        return $phaseFieldQueryObject;
     }
 }

@@ -4,30 +4,28 @@ namespace GraphQL\SchemaObject;
 
 class PageInfoQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'PageInfo';
-
-    public function selectEndCursor()
+    public function selectEndCursor(): static
     {
         $this->selectField('endCursor');
 
         return $this;
     }
 
-    public function selectHasNextPage()
+    public function selectHasNextPage(): static
     {
         $this->selectField('hasNextPage');
 
         return $this;
     }
 
-    public function selectHasPreviousPage()
+    public function selectHasPreviousPage(): static
     {
         $this->selectField('hasPreviousPage');
 
         return $this;
     }
 
-    public function selectStartCursor()
+    public function selectStartCursor(): static
     {
         $this->selectField('startCursor');
 

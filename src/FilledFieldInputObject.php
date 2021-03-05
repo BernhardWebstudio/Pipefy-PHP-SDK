@@ -6,16 +6,22 @@ class FilledFieldInputObject extends InputObject
 {
     protected $fieldId;
 
+    /**
+     * @var mixed[]|null
+     */
     protected $fieldValue;
 
-    public function setFieldId($fieldId)
+    public function setFieldId($fieldId): static
     {
         $this->fieldId = $fieldId;
 
         return $this;
     }
 
-    public function setFieldValue(array $fieldValue)
+    /**
+     * @param mixed[]|null $fieldValue
+     */
+    public function setFieldValue(array $fieldValue): static
     {
         $this->fieldValue = $fieldValue;
 

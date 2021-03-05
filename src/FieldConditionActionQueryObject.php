@@ -4,55 +4,53 @@ namespace GraphQL\SchemaObject;
 
 class FieldConditionActionQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'FieldConditionAction';
-
-    public function selectActionId()
+    public function selectActionId(): static
     {
         $this->selectField('actionId');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectPhase(FieldConditionActionPhaseArgumentsObject $argsObject = null)
+    public function selectPhase(FieldConditionActionPhaseArgumentsObject $fieldConditionActionPhaseArgumentsObject = null): PhaseQueryObject
     {
-        $object = new PhaseQueryObject('phase');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseQueryObject = new PhaseQueryObject('phase');
+        if ($fieldConditionActionPhaseArgumentsObject !== null) {
+            $phaseQueryObject->appendArguments($fieldConditionActionPhaseArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseQueryObject);
 
-        return $object;
+        return $phaseQueryObject;
     }
 
-    public function selectPhaseField(FieldConditionActionPhaseFieldArgumentsObject $argsObject = null)
+    public function selectPhaseField(FieldConditionActionPhaseFieldArgumentsObject $fieldConditionActionPhaseFieldArgumentsObject = null): PhaseFieldQueryObject
     {
-        $object = new PhaseFieldQueryObject('phaseField');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseFieldQueryObject = new PhaseFieldQueryObject('phaseField');
+        if ($fieldConditionActionPhaseFieldArgumentsObject !== null) {
+            $phaseFieldQueryObject->appendArguments($fieldConditionActionPhaseFieldArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseFieldQueryObject);
 
-        return $object;
+        return $phaseFieldQueryObject;
     }
 
     /**
      * @deprecated phaseFieldId is deprecated. Use phaseField instead.
      */
-    public function selectPhaseFieldId()
+    public function selectPhaseFieldId(): static
     {
         $this->selectField('phaseFieldId');
 
         return $this;
     }
 
-    public function selectWhenEvaluator()
+    public function selectWhenEvaluator(): static
     {
         $this->selectField('whenEvaluator');
 

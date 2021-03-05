@@ -4,48 +4,46 @@ namespace GraphQL\SchemaObject;
 
 class PlatformAppQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'PlatformApp';
-
-    public function selectAttachmentsConnection(PlatformAppAttachmentsConnectionArgumentsObject $argsObject = null)
+    public function selectAttachmentsConnection(PlatformAppAttachmentsConnectionArgumentsObject $platformAppAttachmentsConnectionArgumentsObject = null): AppAttachmentConnectionQueryObject
     {
-        $object = new AppAttachmentConnectionQueryObject('attachments_connection');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $appAttachmentConnectionQueryObject = new AppAttachmentConnectionQueryObject('attachments_connection');
+        if ($platformAppAttachmentsConnectionArgumentsObject !== null) {
+            $appAttachmentConnectionQueryObject->appendArguments($platformAppAttachmentsConnectionArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($appAttachmentConnectionQueryObject);
 
-        return $object;
+        return $appAttachmentConnectionQueryObject;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectName()
+    public function selectName(): static
     {
         $this->selectField('name');
 
         return $this;
     }
 
-    public function selectPublic()
+    public function selectPublic(): static
     {
         $this->selectField('public');
 
         return $this;
     }
 
-    public function selectSlug()
+    public function selectSlug(): static
     {
         $this->selectField('slug');
 
         return $this;
     }
 
-    public function selectUrl()
+    public function selectUrl(): static
     {
         $this->selectField('url');
 

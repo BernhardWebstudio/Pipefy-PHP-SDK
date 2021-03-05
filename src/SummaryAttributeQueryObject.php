@@ -4,9 +4,7 @@ namespace GraphQL\SchemaObject;
 
 class SummaryAttributeQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'SummaryAttribute';
-
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 

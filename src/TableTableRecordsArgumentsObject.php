@@ -12,28 +12,28 @@ class TableTableRecordsArgumentsObject extends ArgumentsObject
 
     protected $before;
 
-    public function setFirst($first)
+    public function setFirst($first): static
     {
         $this->first = $first;
 
         return $this;
     }
 
-    public function setAfter($after)
+    public function setAfter($after): static
     {
         $this->after = $after;
 
         return $this;
     }
 
-    public function setLast($last)
+    public function setLast($last): static
     {
         $this->last = $last;
 
         return $this;
     }
 
-    public function setBefore($before)
+    public function setBefore($before): static
     {
         $this->before = $before;
 

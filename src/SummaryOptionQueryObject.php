@@ -4,16 +4,14 @@ namespace GraphQL\SchemaObject;
 
 class SummaryOptionQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'SummaryOption';
-
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectLabel()
+    public function selectLabel(): static
     {
         $this->selectField('label');
 

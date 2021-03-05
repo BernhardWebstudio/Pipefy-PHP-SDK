@@ -14,44 +14,47 @@ class RootCardsArgumentsObject extends ArgumentsObject
 
     protected $pipe_id;
 
+    /**
+     * @var CardSearchInputObject|null
+     */
     protected $search;
 
-    public function setFirst($first)
+    public function setFirst($first): static
     {
         $this->first = $first;
 
         return $this;
     }
 
-    public function setAfter($after)
+    public function setAfter($after): static
     {
         $this->after = $after;
 
         return $this;
     }
 
-    public function setLast($last)
+    public function setLast($last): static
     {
         $this->last = $last;
 
         return $this;
     }
 
-    public function setBefore($before)
+    public function setBefore($before): static
     {
         $this->before = $before;
 
         return $this;
     }
 
-    public function setPipeId($pipeId)
+    public function setPipeId($pipeId): static
     {
         $this->pipe_id = $pipeId;
 
         return $this;
     }
 
-    public function setSearch(CardSearchInputObject $cardSearchInputObject)
+    public function setSearch(CardSearchInputObject $cardSearchInputObject): static
     {
         $this->search = $cardSearchInputObject;
 

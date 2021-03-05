@@ -4,16 +4,14 @@ namespace GraphQL\SchemaObject;
 
 class TablePermissionQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'TablePermission';
-
-    public function selectCanManageRecord()
+    public function selectCanManageRecord(): static
     {
         $this->selectField('can_manage_record');
 
         return $this;
     }
 
-    public function selectCanManageTable()
+    public function selectCanManageTable(): static
     {
         $this->selectField('can_manage_table');
 

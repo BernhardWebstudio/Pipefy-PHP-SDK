@@ -8,23 +8,29 @@ class RootConditionalFieldArgumentsObject extends ArgumentsObject
 
     protected $cardId;
 
+    /**
+     * @var mixed[]|null
+     */
     protected $overrideFieldValue;
 
-    public function setRepoId($repoId)
+    public function setRepoId($repoId): static
     {
         $this->repoId = $repoId;
 
         return $this;
     }
 
-    public function setCardId($cardId)
+    public function setCardId($cardId): static
     {
         $this->cardId = $cardId;
 
         return $this;
     }
 
-    public function setOverrideFieldValue(array $overrideFieldValue)
+    /**
+     * @param mixed[]|null $overrideFieldValue
+     */
+    public function setOverrideFieldValue(array $overrideFieldValue): static
     {
         $this->overrideFieldValue = $overrideFieldValue;
 

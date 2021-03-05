@@ -4,23 +4,21 @@ namespace GraphQL\SchemaObject;
 
 class PublicTableRecordEdgeQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'PublicTableRecordEdge';
-
-    public function selectCursor()
+    public function selectCursor(): static
     {
         $this->selectField('cursor');
 
         return $this;
     }
 
-    public function selectNode(PublicTableRecordEdgeNodeArgumentsObject $argsObject = null)
+    public function selectNode(PublicTableRecordEdgeNodeArgumentsObject $publicTableRecordEdgeNodeArgumentsObject = null): PublicTableRecordQueryObject
     {
-        $object = new PublicTableRecordQueryObject('node');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $publicTableRecordQueryObject = new PublicTableRecordQueryObject('node');
+        if ($publicTableRecordEdgeNodeArgumentsObject !== null) {
+            $publicTableRecordQueryObject->appendArguments($publicTableRecordEdgeNodeArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($publicTableRecordQueryObject);
 
-        return $object;
+        return $publicTableRecordQueryObject;
     }
 }

@@ -4,37 +4,35 @@ namespace GraphQL\SchemaObject;
 
 class AppAttachmentQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'AppAttachment';
-
-    public function selectCardId()
+    public function selectCardId(): static
     {
         $this->selectField('card_id');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectName()
+    public function selectName(): static
     {
         $this->selectField('name');
 
         return $this;
     }
 
-    public function selectSuid()
+    public function selectSuid(): static
     {
         $this->selectField('suid');
 
         return $this;
     }
 
-    public function selectUrl()
+    public function selectUrl(): static
     {
         $this->selectField('url');
 

@@ -4,44 +4,42 @@ namespace GraphQL\SchemaObject;
 
 class HelpLinkQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'HelpLink';
-
-    public function selectDescription()
+    public function selectDescription(): static
     {
         $this->selectField('description');
 
         return $this;
     }
 
-    public function selectIcon()
+    public function selectIcon(): static
     {
         $this->selectField('icon');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectNewTab()
+    public function selectNewTab(): static
     {
         $this->selectField('newTab');
 
         return $this;
     }
 
-    public function selectTitle()
+    public function selectTitle(): static
     {
         $this->selectField('title');
 
         return $this;
     }
 
-    public function selectUrl()
+    public function selectUrl(): static
     {
         $this->selectField('url');
 

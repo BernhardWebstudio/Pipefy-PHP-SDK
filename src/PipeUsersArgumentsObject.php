@@ -6,7 +6,7 @@ class PipeUsersArgumentsObject extends ArgumentsObject
 {
     protected $filterUnacceptedInvitation;
 
-    public function setFilterUnacceptedInvitation($filterUnacceptedInvitation)
+    public function setFilterUnacceptedInvitation($filterUnacceptedInvitation): static
     {
         $this->filterUnacceptedInvitation = $filterUnacceptedInvitation;
 

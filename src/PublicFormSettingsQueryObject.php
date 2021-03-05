@@ -4,118 +4,116 @@ namespace GraphQL\SchemaObject;
 
 class PublicFormSettingsQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'PublicFormSettings';
-
-    public function selectAfterSubmitMessage()
+    public function selectAfterSubmitMessage(): static
     {
         $this->selectField('afterSubmitMessage');
 
         return $this;
     }
 
-    public function selectBackgroundColor()
+    public function selectBackgroundColor(): static
     {
         $this->selectField('backgroundColor');
 
         return $this;
     }
 
-    public function selectBackgroundImage()
+    public function selectBackgroundImage(): static
     {
         $this->selectField('backgroundImage');
 
         return $this;
     }
 
-    public function selectBrandColor()
+    public function selectBrandColor(): static
     {
         $this->selectField('brandColor');
 
         return $this;
     }
 
-    public function selectCanHidePipefyLogo()
+    public function selectCanHidePipefyLogo(): static
     {
         $this->selectField('canHidePipefyLogo');
 
         return $this;
     }
 
-    public function selectDescription()
+    public function selectDescription(): static
     {
         $this->selectField('description');
 
         return $this;
     }
 
-    public function selectDisplayPipefyLogo()
+    public function selectDisplayPipefyLogo(): static
     {
         $this->selectField('displayPipefyLogo');
 
         return $this;
     }
 
-    public function selectLogo()
+    public function selectLogo(): static
     {
         $this->selectField('logo');
 
         return $this;
     }
 
-    public function selectOrganizationName()
+    public function selectOrganizationName(): static
     {
         $this->selectField('organizationName');
 
         return $this;
     }
 
-    public function selectReuseLastSubmissionResponse()
+    public function selectReuseLastSubmissionResponse(): static
     {
         $this->selectField('reuseLastSubmissionResponse');
 
         return $this;
     }
 
-    public function selectShowSubmitAnotherResponseButton()
+    public function selectShowSubmitAnotherResponseButton(): static
     {
         $this->selectField('showSubmitAnotherResponseButton');
 
         return $this;
     }
 
-    public function selectSubmitButtonText()
+    public function selectSubmitButtonText(): static
     {
         $this->selectField('submitButtonText');
 
         return $this;
     }
 
-    public function selectSubmitterEmailCollectionEnabled()
+    public function selectSubmitterEmailCollectionEnabled(): static
     {
         $this->selectField('submitterEmailCollectionEnabled');
 
         return $this;
     }
 
-    public function selectSubmitterEmailCollectionMethod()
+    public function selectSubmitterEmailCollectionMethod(): static
     {
         $this->selectField('submitterEmailCollectionMethod');
 
         return $this;
     }
 
-    public function selectSubmitterEmailField(PublicFormSettingsSubmitterEmailFieldArgumentsObject $argsObject = null)
+    public function selectSubmitterEmailField(PublicFormSettingsSubmitterEmailFieldArgumentsObject $publicFormSettingsSubmitterEmailFieldArgumentsObject = null): MinimalFieldQueryObject
     {
-        $object = new MinimalFieldQueryObject('submitterEmailField');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $minimalFieldQueryObject = new MinimalFieldQueryObject('submitterEmailField');
+        if ($publicFormSettingsSubmitterEmailFieldArgumentsObject !== null) {
+            $minimalFieldQueryObject->appendArguments($publicFormSettingsSubmitterEmailFieldArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($minimalFieldQueryObject);
 
-        return $object;
+        return $minimalFieldQueryObject;
     }
 
-    public function selectTitle()
+    public function selectTitle(): static
     {
         $this->selectField('title');
 

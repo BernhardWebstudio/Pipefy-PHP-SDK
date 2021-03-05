@@ -22,13 +22,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             ],
         ]]);
 
-    $services->set(PreferThisOrSelfMethodCallRector::class)
-        ->call('configure', [[
-            PreferThisOrSelfMethodCallRector::TYPE_TO_PREFERENCE => [
-                TestCase::class => PreferThisOrSelfMethodCallRector::PREFER_THIS,
-            ],
-        ]]);
-
     $parameters = $containerConfigurator->parameters();
 
     $parameters->set(Option::AUTO_IMPORT_NAMES, true);
@@ -48,9 +41,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         SetList::TYPE_DECLARATION,
         SetList::PHPUNIT_CODE_QUALITY,
         SetList::NAMING,
-        SetList::PRIVATIZATION,
-        // enable later
-        // SetList::DEAD_CLASSES,
         SetList::EARLY_RETURN,
     ]);
 

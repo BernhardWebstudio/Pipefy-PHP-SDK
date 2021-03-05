@@ -6,16 +6,22 @@ class RootCardsImportationsArgumentsObject extends ArgumentsObject
 {
     protected $pipeId;
 
+    /**
+     * @var mixed[]|null
+     */
     protected $status;
 
-    public function setPipeId($pipeId)
+    public function setPipeId($pipeId): static
     {
         $this->pipeId = $pipeId;
 
         return $this;
     }
 
-    public function setStatus(array $status)
+    /**
+     * @param mixed[]|null $status
+     */
+    public function setStatus(array $status): static
     {
         $this->status = $status;
 

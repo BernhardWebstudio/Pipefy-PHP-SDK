@@ -4,65 +4,63 @@ namespace GraphQL\SchemaObject;
 
 class MinimalFieldQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'MinimalField';
-
-    public function selectDescription()
+    public function selectDescription(): static
     {
         $this->selectField('description');
 
         return $this;
     }
 
-    public function selectHelp()
+    public function selectHelp(): static
     {
         $this->selectField('help');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectIndexName()
+    public function selectIndexName(): static
     {
         $this->selectField('index_name');
 
         return $this;
     }
 
-    public function selectInternalId()
+    public function selectInternalId(): static
     {
         $this->selectField('internal_id');
 
         return $this;
     }
 
-    public function selectLabel()
+    public function selectLabel(): static
     {
         $this->selectField('label');
 
         return $this;
     }
 
-    public function selectOptions()
+    public function selectOptions(): static
     {
         $this->selectField('options');
 
         return $this;
     }
 
-    public function selectType()
+    public function selectType(): static
     {
         $this->selectField('type');
 
         return $this;
     }
 
-    public function selectUuid()
+    public function selectUuid(): static
     {
         $this->selectField('uuid');
 

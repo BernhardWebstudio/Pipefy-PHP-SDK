@@ -4,153 +4,151 @@ namespace GraphQL\SchemaObject;
 
 class TableRecordQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'TableRecord';
-
-    public function selectAssignees(TableRecordAssigneesArgumentsObject $argsObject = null)
+    public function selectAssignees(TableRecordAssigneesArgumentsObject $tableRecordAssigneesArgumentsObject = null): UserQueryObject
     {
-        $object = new UserQueryObject('assignees');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $userQueryObject = new UserQueryObject('assignees');
+        if ($tableRecordAssigneesArgumentsObject !== null) {
+            $userQueryObject->appendArguments($tableRecordAssigneesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($userQueryObject);
 
-        return $object;
+        return $userQueryObject;
     }
 
-    public function selectCreatedAt()
+    public function selectCreatedAt(): static
     {
         $this->selectField('created_at');
 
         return $this;
     }
 
-    public function selectCreatedBy(TableRecordCreatedByArgumentsObject $argsObject = null)
+    public function selectCreatedBy(TableRecordCreatedByArgumentsObject $tableRecordCreatedByArgumentsObject = null): UserQueryObject
     {
-        $object = new UserQueryObject('created_by');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $userQueryObject = new UserQueryObject('created_by');
+        if ($tableRecordCreatedByArgumentsObject !== null) {
+            $userQueryObject->appendArguments($tableRecordCreatedByArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($userQueryObject);
 
-        return $object;
+        return $userQueryObject;
     }
 
-    public function selectDone()
+    public function selectDone(): static
     {
         $this->selectField('done');
 
         return $this;
     }
 
-    public function selectDueDate()
+    public function selectDueDate(): static
     {
         $this->selectField('due_date');
 
         return $this;
     }
 
-    public function selectFinishedAt()
+    public function selectFinishedAt(): static
     {
         $this->selectField('finished_at');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectLabels(TableRecordLabelsArgumentsObject $argsObject = null)
+    public function selectLabels(TableRecordLabelsArgumentsObject $tableRecordLabelsArgumentsObject = null): LabelQueryObject
     {
-        $object = new LabelQueryObject('labels');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $labelQueryObject = new LabelQueryObject('labels');
+        if ($tableRecordLabelsArgumentsObject !== null) {
+            $labelQueryObject->appendArguments($tableRecordLabelsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($labelQueryObject);
 
-        return $object;
+        return $labelQueryObject;
     }
 
-    public function selectParentRelations(TableRecordParentRelationsArgumentsObject $argsObject = null)
+    public function selectParentRelations(TableRecordParentRelationsArgumentsObject $tableRecordParentRelationsArgumentsObject = null): TableRecordRelationQueryObject
     {
-        $object = new TableRecordRelationQueryObject('parent_relations');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $tableRecordRelationQueryObject = new TableRecordRelationQueryObject('parent_relations');
+        if ($tableRecordParentRelationsArgumentsObject !== null) {
+            $tableRecordRelationQueryObject->appendArguments($tableRecordParentRelationsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($tableRecordRelationQueryObject);
 
-        return $object;
+        return $tableRecordRelationQueryObject;
     }
 
-    public function selectPath()
+    public function selectPath(): static
     {
         $this->selectField('path');
 
         return $this;
     }
 
-    public function selectRecordFields(TableRecordRecordFieldsArgumentsObject $argsObject = null)
+    public function selectRecordFields(TableRecordRecordFieldsArgumentsObject $tableRecordRecordFieldsArgumentsObject = null): TableRecordFieldQueryObject
     {
-        $object = new TableRecordFieldQueryObject('record_fields');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $tableRecordFieldQueryObject = new TableRecordFieldQueryObject('record_fields');
+        if ($tableRecordRecordFieldsArgumentsObject !== null) {
+            $tableRecordFieldQueryObject->appendArguments($tableRecordRecordFieldsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($tableRecordFieldQueryObject);
 
-        return $object;
+        return $tableRecordFieldQueryObject;
     }
 
-    public function selectStatus(TableRecordStatusArgumentsObject $argsObject = null)
+    public function selectStatus(TableRecordStatusArgumentsObject $tableRecordStatusArgumentsObject = null): TableRecordStatusQueryObject
     {
-        $object = new TableRecordStatusQueryObject('status');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $tableRecordStatusQueryObject = new TableRecordStatusQueryObject('status');
+        if ($tableRecordStatusArgumentsObject !== null) {
+            $tableRecordStatusQueryObject->appendArguments($tableRecordStatusArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($tableRecordStatusQueryObject);
 
-        return $object;
+        return $tableRecordStatusQueryObject;
     }
 
-    public function selectSummary(TableRecordSummaryArgumentsObject $argsObject = null)
+    public function selectSummary(TableRecordSummaryArgumentsObject $tableRecordSummaryArgumentsObject = null): SummaryQueryObject
     {
-        $object = new SummaryQueryObject('summary');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $summaryQueryObject = new SummaryQueryObject('summary');
+        if ($tableRecordSummaryArgumentsObject !== null) {
+            $summaryQueryObject->appendArguments($tableRecordSummaryArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($summaryQueryObject);
 
-        return $object;
+        return $summaryQueryObject;
     }
 
-    public function selectTable(TableRecordTableArgumentsObject $argsObject = null)
+    public function selectTable(TableRecordTableArgumentsObject $tableRecordTableArgumentsObject = null): TableQueryObject
     {
-        $object = new TableQueryObject('table');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $tableQueryObject = new TableQueryObject('table');
+        if ($tableRecordTableArgumentsObject !== null) {
+            $tableQueryObject->appendArguments($tableRecordTableArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($tableQueryObject);
 
-        return $object;
+        return $tableQueryObject;
     }
 
-    public function selectTitle()
+    public function selectTitle(): static
     {
         $this->selectField('title');
 
         return $this;
     }
 
-    public function selectUpdatedAt()
+    public function selectUpdatedAt(): static
     {
         $this->selectField('updated_at');
 
         return $this;
     }
 
-    public function selectUrl()
+    public function selectUrl(): static
     {
         $this->selectField('url');
 

@@ -4,6 +4,9 @@ namespace GraphQL\SchemaObject;
 
 class OrganizationPipesArgumentsObject extends ArgumentsObject
 {
+    /**
+     * @var mixed[]|null
+     */
     protected $ids;
 
     protected $include_publics;
@@ -16,42 +19,45 @@ class OrganizationPipesArgumentsObject extends ArgumentsObject
 
     protected $name_search;
 
-    public function setIds(array $ids)
+    /**
+     * @param mixed[]|null $ids
+     */
+    public function setIds(?array $ids): static
     {
         $this->ids = $ids;
 
         return $this;
     }
 
-    public function setIncludePublics($includePublics)
+    public function setIncludePublics($includePublics): static
     {
         $this->include_publics = $includePublics;
 
         return $this;
     }
 
-    public function setWithPermission($withPermission)
+    public function setWithPermission($withPermission): static
     {
         $this->with_permission = $withPermission;
 
         return $this;
     }
 
-    public function setAnyoneCanCreateCard($anyoneCanCreateCard)
+    public function setAnyoneCanCreateCard($anyoneCanCreateCard): static
     {
         $this->anyone_can_create_card = $anyoneCanCreateCard;
 
         return $this;
     }
 
-    public function setOnlyFullyVisible($onlyFullyVisible)
+    public function setOnlyFullyVisible($onlyFullyVisible): static
     {
         $this->onlyFullyVisible = $onlyFullyVisible;
 
         return $this;
     }
 
-    public function setNameSearch($nameSearch)
+    public function setNameSearch($nameSearch): static
     {
         $this->name_search = $nameSearch;
 

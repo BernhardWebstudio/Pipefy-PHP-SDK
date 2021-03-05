@@ -4,27 +4,25 @@ namespace GraphQL\SchemaObject;
 
 class PhaseFieldConnectionQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'PhaseFieldConnection';
-
-    public function selectEdges(PhaseFieldConnectionEdgesArgumentsObject $argsObject = null)
+    public function selectEdges(PhaseFieldConnectionEdgesArgumentsObject $phaseFieldConnectionEdgesArgumentsObject = null): PhaseFieldEdgeQueryObject
     {
-        $object = new PhaseFieldEdgeQueryObject('edges');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseFieldEdgeQueryObject = new PhaseFieldEdgeQueryObject('edges');
+        if ($phaseFieldConnectionEdgesArgumentsObject !== null) {
+            $phaseFieldEdgeQueryObject->appendArguments($phaseFieldConnectionEdgesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseFieldEdgeQueryObject);
 
-        return $object;
+        return $phaseFieldEdgeQueryObject;
     }
 
-    public function selectPageInfo(PhaseFieldConnectionPageInfoArgumentsObject $argsObject = null)
+    public function selectPageInfo(PhaseFieldConnectionPageInfoArgumentsObject $phaseFieldConnectionPageInfoArgumentsObject = null): PageInfoQueryObject
     {
-        $object = new PageInfoQueryObject('pageInfo');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $pageInfoQueryObject = new PageInfoQueryObject('pageInfo');
+        if ($phaseFieldConnectionPageInfoArgumentsObject !== null) {
+            $pageInfoQueryObject->appendArguments($phaseFieldConnectionPageInfoArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($pageInfoQueryObject);
 
-        return $object;
+        return $pageInfoQueryObject;
     }
 }

@@ -4,27 +4,25 @@ namespace GraphQL\SchemaObject;
 
 class RepoItemTypesConnectionQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'RepoItemTypesConnection';
-
-    public function selectEdges(RepoItemTypesConnectionEdgesArgumentsObject $argsObject = null)
+    public function selectEdges(RepoItemTypesConnectionEdgesArgumentsObject $repoItemTypesConnectionEdgesArgumentsObject = null): RepoItemTypesEdgeQueryObject
     {
-        $object = new RepoItemTypesEdgeQueryObject('edges');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $repoItemTypesEdgeQueryObject = new RepoItemTypesEdgeQueryObject('edges');
+        if ($repoItemTypesConnectionEdgesArgumentsObject !== null) {
+            $repoItemTypesEdgeQueryObject->appendArguments($repoItemTypesConnectionEdgesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($repoItemTypesEdgeQueryObject);
 
-        return $object;
+        return $repoItemTypesEdgeQueryObject;
     }
 
-    public function selectPageInfo(RepoItemTypesConnectionPageInfoArgumentsObject $argsObject = null)
+    public function selectPageInfo(RepoItemTypesConnectionPageInfoArgumentsObject $repoItemTypesConnectionPageInfoArgumentsObject = null): PageInfoQueryObject
     {
-        $object = new PageInfoQueryObject('pageInfo');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $pageInfoQueryObject = new PageInfoQueryObject('pageInfo');
+        if ($repoItemTypesConnectionPageInfoArgumentsObject !== null) {
+            $pageInfoQueryObject->appendArguments($repoItemTypesConnectionPageInfoArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($pageInfoQueryObject);
 
-        return $object;
+        return $pageInfoQueryObject;
     }
 }

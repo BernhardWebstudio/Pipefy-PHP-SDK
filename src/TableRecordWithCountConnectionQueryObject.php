@@ -4,34 +4,32 @@ namespace GraphQL\SchemaObject;
 
 class TableRecordWithCountConnectionQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'TableRecordWithCountConnection';
-
-    public function selectEdges(TableRecordWithCountConnectionEdgesArgumentsObject $argsObject = null)
+    public function selectEdges(TableRecordWithCountConnectionEdgesArgumentsObject $tableRecordWithCountConnectionEdgesArgumentsObject = null): TableRecordEdgeQueryObject
     {
-        $object = new TableRecordEdgeQueryObject('edges');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $tableRecordEdgeQueryObject = new TableRecordEdgeQueryObject('edges');
+        if ($tableRecordWithCountConnectionEdgesArgumentsObject !== null) {
+            $tableRecordEdgeQueryObject->appendArguments($tableRecordWithCountConnectionEdgesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($tableRecordEdgeQueryObject);
 
-        return $object;
+        return $tableRecordEdgeQueryObject;
     }
 
-    public function selectMatchCount()
+    public function selectMatchCount(): static
     {
         $this->selectField('matchCount');
 
         return $this;
     }
 
-    public function selectPageInfo(TableRecordWithCountConnectionPageInfoArgumentsObject $argsObject = null)
+    public function selectPageInfo(TableRecordWithCountConnectionPageInfoArgumentsObject $tableRecordWithCountConnectionPageInfoArgumentsObject = null): PageInfoQueryObject
     {
-        $object = new PageInfoQueryObject('pageInfo');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $pageInfoQueryObject = new PageInfoQueryObject('pageInfo');
+        if ($tableRecordWithCountConnectionPageInfoArgumentsObject !== null) {
+            $pageInfoQueryObject->appendArguments($tableRecordWithCountConnectionPageInfoArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($pageInfoQueryObject);
 
-        return $object;
+        return $pageInfoQueryObject;
     }
 }

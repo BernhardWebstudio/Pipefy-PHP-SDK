@@ -4,41 +4,39 @@ namespace GraphQL\SchemaObject;
 
 class ConditionQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'Condition';
-
-    public function selectExpressions(ConditionExpressionsArgumentsObject $argsObject = null)
+    public function selectExpressions(ConditionExpressionsArgumentsObject $conditionExpressionsArgumentsObject = null): ConditionExpressionQueryObject
     {
-        $object = new ConditionExpressionQueryObject('expressions');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $conditionExpressionQueryObject = new ConditionExpressionQueryObject('expressions');
+        if ($conditionExpressionsArgumentsObject !== null) {
+            $conditionExpressionQueryObject->appendArguments($conditionExpressionsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($conditionExpressionQueryObject);
 
-        return $object;
+        return $conditionExpressionQueryObject;
     }
 
-    public function selectExpressionsStructure()
+    public function selectExpressionsStructure(): static
     {
         $this->selectField('expressions_structure');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectRelatedCards(ConditionRelatedCardsArgumentsObject $argsObject = null)
+    public function selectRelatedCards(ConditionRelatedCardsArgumentsObject $conditionRelatedCardsArgumentsObject = null): CardQueryObject
     {
-        $object = new CardQueryObject('related_cards');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $cardQueryObject = new CardQueryObject('related_cards');
+        if ($conditionRelatedCardsArgumentsObject !== null) {
+            $cardQueryObject->appendArguments($conditionRelatedCardsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($cardQueryObject);
 
-        return $object;
+        return $cardQueryObject;
     }
 }

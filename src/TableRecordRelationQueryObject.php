@@ -4,34 +4,32 @@ namespace GraphQL\SchemaObject;
 
 class TableRecordRelationQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'TableRecordRelation';
-
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectName()
+    public function selectName(): static
     {
         $this->selectField('name');
 
         return $this;
     }
 
-    public function selectRepoItems(TableRecordRelationRepoItemsArgumentsObject $argsObject = null)
+    public function selectRepoItems(TableRecordRelationRepoItemsArgumentsObject $tableRecordRelationRepoItemsArgumentsObject = null): RepoItemTypesConnectionQueryObject
     {
-        $object = new RepoItemTypesConnectionQueryObject('repo_items');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $repoItemTypesConnectionQueryObject = new RepoItemTypesConnectionQueryObject('repo_items');
+        if ($tableRecordRelationRepoItemsArgumentsObject !== null) {
+            $repoItemTypesConnectionQueryObject->appendArguments($tableRecordRelationRepoItemsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($repoItemTypesConnectionQueryObject);
 
-        return $object;
+        return $repoItemTypesConnectionQueryObject;
     }
 
-    public function selectSourceType()
+    public function selectSourceType(): static
     {
         $this->selectField('source_type');
 

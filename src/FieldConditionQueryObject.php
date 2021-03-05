@@ -4,59 +4,57 @@ namespace GraphQL\SchemaObject;
 
 class FieldConditionQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'FieldCondition';
-
-    public function selectActions(FieldConditionActionsArgumentsObject $argsObject = null)
+    public function selectActions(FieldConditionActionsArgumentsObject $fieldConditionActionsArgumentsObject = null): FieldConditionActionQueryObject
     {
-        $object = new FieldConditionActionQueryObject('actions');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $fieldConditionActionQueryObject = new FieldConditionActionQueryObject('actions');
+        if ($fieldConditionActionsArgumentsObject !== null) {
+            $fieldConditionActionQueryObject->appendArguments($fieldConditionActionsArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($fieldConditionActionQueryObject);
 
-        return $object;
+        return $fieldConditionActionQueryObject;
     }
 
-    public function selectCondition(FieldConditionConditionArgumentsObject $argsObject = null)
+    public function selectCondition(FieldConditionConditionArgumentsObject $fieldConditionConditionArgumentsObject = null): ConditionQueryObject
     {
-        $object = new ConditionQueryObject('condition');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $conditionQueryObject = new ConditionQueryObject('condition');
+        if ($fieldConditionConditionArgumentsObject !== null) {
+            $conditionQueryObject->appendArguments($fieldConditionConditionArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($conditionQueryObject);
 
-        return $object;
+        return $conditionQueryObject;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectIsTrueFor()
+    public function selectIsTrueFor(): static
     {
         $this->selectField('isTrueFor');
 
         return $this;
     }
 
-    public function selectName()
+    public function selectName(): static
     {
         $this->selectField('name');
 
         return $this;
     }
 
-    public function selectPhase(FieldConditionPhaseArgumentsObject $argsObject = null)
+    public function selectPhase(FieldConditionPhaseArgumentsObject $fieldConditionPhaseArgumentsObject = null): PhaseQueryObject
     {
-        $object = new PhaseQueryObject('phase');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseQueryObject = new PhaseQueryObject('phase');
+        if ($fieldConditionPhaseArgumentsObject !== null) {
+            $phaseQueryObject->appendArguments($fieldConditionPhaseArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseQueryObject);
 
-        return $object;
+        return $phaseQueryObject;
     }
 }

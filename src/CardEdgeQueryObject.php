@@ -4,23 +4,21 @@ namespace GraphQL\SchemaObject;
 
 class CardEdgeQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'CardEdge';
-
-    public function selectCursor()
+    public function selectCursor(): static
     {
         $this->selectField('cursor');
 
         return $this;
     }
 
-    public function selectNode(CardEdgeNodeArgumentsObject $argsObject = null)
+    public function selectNode(CardEdgeNodeArgumentsObject $cardEdgeNodeArgumentsObject = null): CardQueryObject
     {
-        $object = new CardQueryObject('node');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $cardQueryObject = new CardQueryObject('node');
+        if ($cardEdgeNodeArgumentsObject !== null) {
+            $cardQueryObject->appendArguments($cardEdgeNodeArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($cardQueryObject);
 
-        return $object;
+        return $cardQueryObject;
     }
 }

@@ -4,90 +4,88 @@ namespace GraphQL\SchemaObject;
 
 class UserQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'User';
-
-    public function selectAvatarUrl()
+    public function selectAvatarUrl(): static
     {
         $this->selectField('avatarUrl');
 
         return $this;
     }
 
-    public function selectCreatedAt()
+    public function selectCreatedAt(): static
     {
         $this->selectField('created_at');
 
         return $this;
     }
 
-    public function selectDepartmentKey()
+    public function selectDepartmentKey(): static
     {
         $this->selectField('departmentKey');
 
         return $this;
     }
 
-    public function selectDisplayName()
+    public function selectDisplayName(): static
     {
         $this->selectField('displayName');
 
         return $this;
     }
 
-    public function selectEmail()
+    public function selectEmail(): static
     {
         $this->selectField('email');
 
         return $this;
     }
 
-    public function selectHasUnreadNotifications()
+    public function selectHasUnreadNotifications(): static
     {
         $this->selectField('hasUnreadNotifications');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectLocale()
+    public function selectLocale(): static
     {
         $this->selectField('locale');
 
         return $this;
     }
 
-    public function selectName()
+    public function selectName(): static
     {
         $this->selectField('name');
 
         return $this;
     }
 
-    public function selectPreferences(UserPreferencesArgumentsObject $argsObject = null)
+    public function selectPreferences(UserPreferencesArgumentsObject $userPreferencesArgumentsObject = null): UserPreferenceQueryObject
     {
-        $object = new UserPreferenceQueryObject('preferences');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $userPreferenceQueryObject = new UserPreferenceQueryObject('preferences');
+        if ($userPreferencesArgumentsObject !== null) {
+            $userPreferenceQueryObject->appendArguments($userPreferencesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($userPreferenceQueryObject);
 
-        return $object;
+        return $userPreferenceQueryObject;
     }
 
-    public function selectTimeZone()
+    public function selectTimeZone(): static
     {
         $this->selectField('timeZone');
 
         return $this;
     }
 
-    public function selectUsername()
+    public function selectUsername(): static
     {
         $this->selectField('username');
 

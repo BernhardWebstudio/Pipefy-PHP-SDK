@@ -6,7 +6,7 @@ class CardRelationshipCardsArgumentsObject extends ArgumentsObject
 {
     protected $done;
 
-    public function setDone($done)
+    public function setDone($done): static
     {
         $this->done = $done;
 

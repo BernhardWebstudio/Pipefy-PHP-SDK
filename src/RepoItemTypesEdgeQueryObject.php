@@ -4,9 +4,7 @@ namespace GraphQL\SchemaObject;
 
 class RepoItemTypesEdgeQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'RepoItemTypesEdge';
-
-    public function selectCursor()
+    public function selectCursor(): static
     {
         $this->selectField('cursor');
 

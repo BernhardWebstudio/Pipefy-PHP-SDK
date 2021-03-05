@@ -4,41 +4,39 @@ namespace GraphQL\SchemaObject;
 
 class CommentQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'Comment';
-
-    public function selectAuthor(CommentAuthorArgumentsObject $argsObject = null)
+    public function selectAuthor(CommentAuthorArgumentsObject $commentAuthorArgumentsObject = null): UserQueryObject
     {
-        $object = new UserQueryObject('author');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $userQueryObject = new UserQueryObject('author');
+        if ($commentAuthorArgumentsObject !== null) {
+            $userQueryObject->appendArguments($commentAuthorArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($userQueryObject);
 
-        return $object;
+        return $userQueryObject;
     }
 
-    public function selectAuthorName()
+    public function selectAuthorName(): static
     {
         $this->selectField('author_name');
 
         return $this;
     }
 
-    public function selectCreatedAt()
+    public function selectCreatedAt(): static
     {
         $this->selectField('created_at');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 
         return $this;
     }
 
-    public function selectText()
+    public function selectText(): static
     {
         $this->selectField('text');
 

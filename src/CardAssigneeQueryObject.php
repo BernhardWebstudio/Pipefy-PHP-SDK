@@ -4,16 +4,14 @@ namespace GraphQL\SchemaObject;
 
 class CardAssigneeQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'CardAssignee';
-
-    public function selectAssignedAt()
+    public function selectAssignedAt(): static
     {
         $this->selectField('assignedAt');
 
         return $this;
     }
 
-    public function selectId()
+    public function selectId(): static
     {
         $this->selectField('id');
 

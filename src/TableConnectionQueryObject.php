@@ -4,27 +4,25 @@ namespace GraphQL\SchemaObject;
 
 class TableConnectionQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'TableConnection';
-
-    public function selectEdges(TableConnectionEdgesArgumentsObject $argsObject = null)
+    public function selectEdges(TableConnectionEdgesArgumentsObject $tableConnectionEdgesArgumentsObject = null): TableEdgeQueryObject
     {
-        $object = new TableEdgeQueryObject('edges');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $tableEdgeQueryObject = new TableEdgeQueryObject('edges');
+        if ($tableConnectionEdgesArgumentsObject !== null) {
+            $tableEdgeQueryObject->appendArguments($tableConnectionEdgesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($tableEdgeQueryObject);
 
-        return $object;
+        return $tableEdgeQueryObject;
     }
 
-    public function selectPageInfo(TableConnectionPageInfoArgumentsObject $argsObject = null)
+    public function selectPageInfo(TableConnectionPageInfoArgumentsObject $tableConnectionPageInfoArgumentsObject = null): PageInfoQueryObject
     {
-        $object = new PageInfoQueryObject('pageInfo');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $pageInfoQueryObject = new PageInfoQueryObject('pageInfo');
+        if ($tableConnectionPageInfoArgumentsObject !== null) {
+            $pageInfoQueryObject->appendArguments($tableConnectionPageInfoArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($pageInfoQueryObject);
 
-        return $object;
+        return $pageInfoQueryObject;
     }
 }

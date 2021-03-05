@@ -4,123 +4,121 @@ namespace GraphQL\SchemaObject;
 
 class TableRecordFieldQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'TableRecordField';
-
-    public function selectArrayValue()
+    public function selectArrayValue(): static
     {
         $this->selectField('array_value');
 
         return $this;
     }
 
-    public function selectAssigneeValues(TableRecordFieldAssigneeValuesArgumentsObject $argsObject = null)
+    public function selectAssigneeValues(TableRecordFieldAssigneeValuesArgumentsObject $tableRecordFieldAssigneeValuesArgumentsObject = null): UserQueryObject
     {
-        $object = new UserQueryObject('assignee_values');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $userQueryObject = new UserQueryObject('assignee_values');
+        if ($tableRecordFieldAssigneeValuesArgumentsObject !== null) {
+            $userQueryObject->appendArguments($tableRecordFieldAssigneeValuesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($userQueryObject);
 
-        return $object;
+        return $userQueryObject;
     }
 
-    public function selectDateValue()
+    public function selectDateValue(): static
     {
         $this->selectField('date_value');
 
         return $this;
     }
 
-    public function selectDatetimeValue()
+    public function selectDatetimeValue(): static
     {
         $this->selectField('datetime_value');
 
         return $this;
     }
 
-    public function selectMinimalField(TableRecordFieldFieldArgumentsObject $argsObject = null)
+    public function selectMinimalField(TableRecordFieldFieldArgumentsObject $tableRecordFieldFieldArgumentsObject = null): MinimalFieldQueryObject
     {
-        $object = new MinimalFieldQueryObject('field');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $minimalFieldQueryObject = new MinimalFieldQueryObject('field');
+        if ($tableRecordFieldFieldArgumentsObject !== null) {
+            $minimalFieldQueryObject->appendArguments($tableRecordFieldFieldArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($minimalFieldQueryObject);
 
-        return $object;
+        return $minimalFieldQueryObject;
     }
 
-    public function selectFilledAt()
+    public function selectFilledAt(): static
     {
         $this->selectField('filled_at');
 
         return $this;
     }
 
-    public function selectFloatValue()
+    public function selectFloatValue(): static
     {
         $this->selectField('float_value');
 
         return $this;
     }
 
-    public function selectIndexName()
+    public function selectIndexName(): static
     {
         $this->selectField('indexName');
 
         return $this;
     }
 
-    public function selectLabelValues(TableRecordFieldLabelValuesArgumentsObject $argsObject = null)
+    public function selectLabelValues(TableRecordFieldLabelValuesArgumentsObject $tableRecordFieldLabelValuesArgumentsObject = null): FieldLabelQueryObject
     {
-        $object = new FieldLabelQueryObject('label_values');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $fieldLabelQueryObject = new FieldLabelQueryObject('label_values');
+        if ($tableRecordFieldLabelValuesArgumentsObject !== null) {
+            $fieldLabelQueryObject->appendArguments($tableRecordFieldLabelValuesArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($fieldLabelQueryObject);
 
-        return $object;
+        return $fieldLabelQueryObject;
     }
 
-    public function selectName()
+    public function selectName(): static
     {
         $this->selectField('name');
 
         return $this;
     }
 
-    public function selectPhaseField(TableRecordFieldPhaseFieldArgumentsObject $argsObject = null)
+    public function selectPhaseField(TableRecordFieldPhaseFieldArgumentsObject $tableRecordFieldPhaseFieldArgumentsObject = null): PhaseFieldQueryObject
     {
-        $object = new PhaseFieldQueryObject('phase_field');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $phaseFieldQueryObject = new PhaseFieldQueryObject('phase_field');
+        if ($tableRecordFieldPhaseFieldArgumentsObject !== null) {
+            $phaseFieldQueryObject->appendArguments($tableRecordFieldPhaseFieldArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($phaseFieldQueryObject);
 
-        return $object;
+        return $phaseFieldQueryObject;
     }
 
-    public function selectReportValue()
+    public function selectReportValue(): static
     {
         $this->selectField('report_value');
 
         return $this;
     }
 
-    public function selectRequired()
+    public function selectRequired(): static
     {
         $this->selectField('required');
 
         return $this;
     }
 
-    public function selectUpdatedAt()
+    public function selectUpdatedAt(): static
     {
         $this->selectField('updated_at');
 
         return $this;
     }
 
-    public function selectValue()
+    public function selectValue(): static
     {
         $this->selectField('value');
 

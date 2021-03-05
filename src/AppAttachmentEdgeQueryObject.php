@@ -4,23 +4,21 @@ namespace GraphQL\SchemaObject;
 
 class AppAttachmentEdgeQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'AppAttachmentEdge';
-
-    public function selectCursor()
+    public function selectCursor(): static
     {
         $this->selectField('cursor');
 
         return $this;
     }
 
-    public function selectNode(AppAttachmentEdgeNodeArgumentsObject $argsObject = null)
+    public function selectNode(AppAttachmentEdgeNodeArgumentsObject $appAttachmentEdgeNodeArgumentsObject = null): AppAttachmentQueryObject
     {
-        $object = new AppAttachmentQueryObject('node');
-        if ($argsObject !== null) {
-            $object->appendArguments($argsObject->toArray());
+        $appAttachmentQueryObject = new AppAttachmentQueryObject('node');
+        if ($appAttachmentEdgeNodeArgumentsObject !== null) {
+            $appAttachmentQueryObject->appendArguments($appAttachmentEdgeNodeArgumentsObject->toArray());
         }
-        $this->selectField($object);
+        $this->selectField($appAttachmentQueryObject);
 
-        return $object;
+        return $appAttachmentQueryObject;
     }
 }

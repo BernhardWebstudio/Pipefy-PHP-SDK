@@ -4,16 +4,14 @@ namespace GraphQL\SchemaObject;
 
 class CardExpirationQueryObject extends QueryObject
 {
-    public const OBJECT_NAME = 'CardExpiration';
-
-    public function selectExpiredAt()
+    public function selectExpiredAt(): static
     {
         $this->selectField('expiredAt');
 
         return $this;
     }
 
-    public function selectShouldExpireAt()
+    public function selectShouldExpireAt(): static
     {
         $this->selectField('shouldExpireAt');
 
