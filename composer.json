@@ -9,8 +9,8 @@
     "keywords": ["GraphQL", "Pipefy"],
     "require-dev": {
         "overblog/graphql-php-generator": "^0.12.6",
-        "symfony/expression-language": "^5.2",
-        "rector/rector": "^0.9.31",
+        "symfony/expression-language": "^6.0.3",
+        "rector/rector": "^0.12.15",
         "symplify/easy-coding-standard": "*",
         "phpstan/phpstan": "*",
         "gmostafa/php-graphql-oqm": "^1.3"
